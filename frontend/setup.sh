@@ -9,12 +9,16 @@ install_npm() {
   fi
 }
 
-install_react() {
-  npm install --save react react-dom
-}
+# install_react() {
+#   npm install --save react react-dom
+# }
+#
+# install_bootstrap() {
+#   npm install --save react-bootstrap
+# }
 
-install_bootstrap() {
-  npm install --save react-bootstrap
+update_npm_packages() {
+  npm install
 }
 
 main() {
@@ -25,8 +29,9 @@ main() {
   fi
 
   install_npm
-  install_react
-  install_bootstrap
+  update_npm_packages
+  # install_react
+  # install_bootstrap
 
 }
 
