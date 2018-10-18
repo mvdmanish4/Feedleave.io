@@ -190,11 +190,3 @@ In order to deploy your project to Firebase Hosting, follow these instructions:
 4- Run `yarn build` or `npm run build`
 
 5- Run `firebase deploy`
-
-## Sending Feedback/Contribution
-
-Always open to [your feedback & contributions](https://github.com/timurcatakli/react-rapid/issues).
-
-## License
-
-The MIT License (MIT) Copyright (c)

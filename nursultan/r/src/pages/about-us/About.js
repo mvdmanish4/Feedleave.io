@@ -23,16 +23,7 @@ const panes = [
       return (
         <Tab.Pane attached={false}>
           <p>
-            Magna aliqua enimad minys veniam quis nosar exercitation ullamco
-            laboris nisi aliquip comd sed consequat duis aute rure dolor
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
-          </p>
-          <p>
-            Magna aliqua enimad minys veniam quis nosar exercitation ullamco
-            laboris nisi aliquip comd sed consequat duis aute rure dolor
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            some text.
           </p>
         </Tab.Pane>
       )

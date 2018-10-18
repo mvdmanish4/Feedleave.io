@@ -49,7 +49,7 @@ class Home extends Component {
                   <Header
                     as="h2"
                     id="home-h2"
-                    content="Find reviews and suggestions about internship in Silicon Valley"
+                    content="Find reviews and suggestions about internships in Silicon Valley"
                     inverted
                   />
                   <a
