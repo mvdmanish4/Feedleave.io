@@ -32,7 +32,7 @@ You can delete or rename the other files.
 
 ### Using NPM
 ```js
-$ git clone https://github.com/timurcatakli/react-rapid.git
+$ git clone https://github.com/mvdmanish4/Feedleave.io/tree/master/nursultan/r
 $ cd react-rapid
 $ npm install
 $ npm run start
@@ -40,7 +40,7 @@ $ npm run start
 
 ### Using Yarn
 ```js
-$ git clone https://github.com/timurcatakli/react-rapid.git
+$ git clone https://github.com/mvdmanish4/Feedleave.io/tree/master/nursultan/r
 $ cd react-rapid
 $ yarn
 $ yarn start
