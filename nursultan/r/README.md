@@ -172,7 +172,7 @@ export default PageRoutes
 ```
 
 ## SEO
-Update the `index.html` file with your info. Also, we can use [Favicon Generator](https://realfavicongenerator.net) and update the favicons under root folder.
+Also, we can use [Favicon Generator](https://realfavicongenerator.net) and update the favicons under root folder.
 
 ## Deployment
 In order to deploy your project to Firebase Hosting, follow these instructions:
