@@ -61,10 +61,10 @@ class Reviews extends Component {
             <Card.Header>{project.name}</Card.Header>
           </Card.Content>
           <Card.Content extra>{project.category}</Card.Content>
-          <Card.Content extra>{project.website}</Card.Content>
+          <Card.Content extra>{project.type}</Card.Content>
           <Card.Content extra>{project.author}</Card.Content>
           <Card.Content extra>{project.release_date}</Card.Content>
-          <Card.Content extra>{project.client} views</Card.Content>
+          <Card.Content extra>{project.views} views</Card.Content>
         </Card>
       )
     })

@@ -116,8 +116,8 @@ const config = {
       category: 'Google',
       release_date: '08/12/2018',
       author: 'Babette Sussans',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 2,
@@ -126,8 +126,8 @@ const config = {
       category: 'Google',
       release_date: '01/01/2018',
       author: 'Budd Pray',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 3,
@@ -136,8 +136,8 @@ const config = {
       category: 'Google',
       release_date: '09/20/2018',
       author: 'Jennee Ales0',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 4,
@@ -146,8 +146,8 @@ const config = {
       category: 'Google',
       release_date: '05/02/2018',
       author: 'Linea Piaggia',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 5,
@@ -156,8 +156,8 @@ const config = {
       category: 'Google',
       release_date: '06/24/2018',
       author: 'Marwin Hernik',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 6,
@@ -166,8 +166,8 @@ const config = {
       category: 'Apple',
       release_date: '04/30/2018',
       author: 'Herculie Scone',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 7,
@@ -176,8 +176,8 @@ const config = {
       category: 'Apple',
       release_date: '07/28/2018',
       author: 'Emlen Giacobo',
-      website: 'CV',
-      client: '100'
+      type: 'CV',
+      views: '100'
     },
     {
       id: 8,
@@ -186,8 +186,8 @@ const config = {
       category: 'Apple',
       release_date: '11/29/2018',
       author: 'Vonnie Poytheras',
-      website: 'Phone Interview',
-      client: '100'
+      type: 'Phone Interview',
+      views: '100'
     },
     {
       id: 9,
@@ -196,8 +196,8 @@ const config = {
       category: 'Apple',
       release_date: '03/14/2018',
       author: 'Stacie Ledes',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 10,
@@ -206,8 +206,8 @@ const config = {
       category: 'Apple',
       release_date: '10/04/2018',
       author: 'Thedrick Scading',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 11,
@@ -216,8 +216,8 @@ const config = {
       category: 'Microsoft',
       release_date: '06/09/2018',
       author: 'Fredek Undrill',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 12,
@@ -226,8 +226,8 @@ const config = {
       category: 'Microsoft',
       release_date: '01/06/2018',
       author: 'Maury Rickeard',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 13,
@@ -236,8 +236,8 @@ const config = {
       category: 'Microsoft',
       release_date: '04/23/2018',
       author: 'Lindsy Fennessy',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 14,
@@ -246,8 +246,8 @@ const config = {
       category: 'Microsoft',
       release_date: '03/20/2018',
       author: 'Vitia Cancellieri',
-      website: 'Pitch, Interview',
-      client: '100'
+      type: 'Pitch, Interview',
+      views: '100'
     },
     {
       id: 15,
@@ -256,8 +256,8 @@ const config = {
       category: 'Microsoft',
       release_date: '01/08/2018',
       author: 'Glad Casarini',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 16,
@@ -266,8 +266,8 @@ const config = {
       category: 'Microsoft',
       release_date: '01/19/2018',
       author: 'Georgeanne Raatz',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 17,
@@ -276,8 +276,8 @@ const config = {
       category: 'Microsoft',
       release_date: '08/10/2018',
       author: 'Gerrard Kemer',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 18,
@@ -286,8 +286,8 @@ const config = {
       category: 'Amazon',
       release_date: '05/02/2018',
       author: 'Sammy Callander',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 19,
@@ -296,8 +296,8 @@ const config = {
       category: 'Amazon',
       release_date: '09/02/2018',
       author: 'Wright Downham',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     },
     {
       id: 20,
@@ -306,8 +306,8 @@ const config = {
       category: 'Amazon',
       release_date: '09/25/2018',
       author: 'Terrel Jacomb',
-      website: 'CV, Pitch, Interview',
-      client: '100'
+      type: 'CV, Pitch, Interview',
+      views: '100'
     }
   ]
 }
