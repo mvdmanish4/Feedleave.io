@@ -1,3 +1,5 @@
+The name "r" stands for Route.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). Any feature or script supported by Create-React-App is also supported.
 
 ## Folder Structure
@@ -94,27 +96,21 @@ const NewPage = () => (
   <div>
     <Segment basic>
       <Container>
-        <h3 id="category-title">Magna Aliqua Enimad</h3>
+        <h3 id="category-title">Category</h3>
         <Grid columns={2} stackable verticalAlign="top">
           <Grid.Column>
-            <h4 id="article-title">Magna Aliqua Enimad</h4>
+            <h4 id="article-title">Topic</h4>
             <div id="article-content">
               <p>
-                Nobis at explicabo similique laudantium deserunt, excepturi
-                fugit eum voluptatem commodi soluta quaerat, adipisci ducimus
-                optio, earum beatae! Cupiditate laboriosam tenetur libero at
-                vitae possimus velit est, eum quam ratione. Molestiae, veniam.
+                Text ...
               </p>
             </div>
           </Grid.Column>
           <Grid.Column>
-            <h4 id="article-title">Magna Aliqua Enimad</h4>
+            <h4 id="article-title">Topic</h4>
             <div id="article-content">
               <p>
-                Nobis at explicabo similique laudantium deserunt, excepturi
-                fugit eum voluptatem commodi soluta quaerat, adipisci ducimus
-                optio, earum beatae! Cupiditate laboriosam tenetur libero at
-                vitae possimus velit est, eum quam ratione. Molestiae, veniam.
+                Text ...
               </p>
             </div>
           </Grid.Column>
@@ -176,7 +172,7 @@ export default PageRoutes
 ```
 
 ## SEO
-Don't forget to update the `index.html` file with your info. Also you can use [Favicon Generator](https://realfavicongenerator.net) and update the favicons under root folder.
+Update the `index.html` file with your info. Also, we can use [Favicon Generator](https://realfavicongenerator.net) and update the favicons under root folder.
 
 ## Deployment
 In order to deploy your project to Firebase Hosting, follow these instructions:
