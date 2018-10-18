@@ -175,7 +175,7 @@ export default PageRoutes
 Also, we can use [Favicon Generator](https://realfavicongenerator.net) and update the favicons under root folder.
 
 ## Deployment
-In order to deploy your project to Firebase Hosting, follow these instructions:
+In order to deploy the project on Firebase Hosting, follow these instructions:
 
 1- Make sure that Firebase CLI tools is installed locally.
 
