@@ -11,10 +11,10 @@ import {
 import { auth, db } from './../../firebase/firebase'
 import PropTypes from 'prop-types'
 import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
+  // BrowserRouter as Router,
+  // Route,
+  // Link,
+  // Redirect,
   withRouter
 } from 'react-router-dom'
 const updateByPropertyName = (propertyName, value) => () => ({
@@ -91,8 +91,8 @@ class Signup extends Component {
                     <Form.Group widths="equal">
                       <Form.Input value={passwordTwo} onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))} icon="key" label="Confirm Password" type="password" placeholder="minimum 6 characters" />
                     </Form.Group>
-                    <Form.Button disabled={isInvalid} type="submit">Sign Up</Form.Button>
                     { error && <p>{error.message}</p> }
+                    <Form.Button disabled={isInvalid} type="submit">Sign Up</Form.Button>
                   </Form>
                 </Grid.Column>
               </Grid.Row>
