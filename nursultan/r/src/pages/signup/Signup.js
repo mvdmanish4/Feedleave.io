@@ -80,7 +80,7 @@ class Signup extends Component {
                   <h4 id="article-title">By continuing, you agree to our Terms of Use and Privacy Policy.</h4>
                   <Form onSubmit={this.onSubmit}>
                     <Form.Group widths="equal">
-                      <Form.Input value={username} onChange={event => this.setState(updateByPropertyName('username', event.target.value))} icon="user" label="Username" placeholder="Username" />
+                      <Form.Input value={username} onChange={event => this.setState(updateByPropertyName('username', event.target.value))} icon="user" label="Name" placeholder="Name" />
                     </Form.Group>
                     <Form.Group widths="equal">
                       <Form.Input value={email} onChange={event => this.setState(updateByPropertyName('email', event.target.value))} icon="mail" label="Email" placeholder="Email Address" />
