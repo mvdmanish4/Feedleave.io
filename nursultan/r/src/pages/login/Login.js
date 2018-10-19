@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import config from '../../config'
 import LinkedinSDK from 'react-linkedin-sdk'
-// import fire from './Config/Fire'
 import {
   Segment,
   Container,
@@ -30,22 +29,6 @@ const Login = () => {
       })
   }
 
-  // const auth = firebase.auth();
-  // export {
-  // auth,
-  // };
-  // authListener() {
-  //   fire.auth().onAuthStateChanged((user) => {
-  //     // console.log(user);
-  //     if (user) {
-  //       this.setState({user})
-  //       localStorage.setItem('user', user.id)
-  //     } else {
-  //       this.setState({user: null})
-  //       localStorage.removeItem('user')
-  //     }
-  //   })
-  // }
   return (
     <div>
       <Segment basic>
@@ -61,9 +44,6 @@ const Login = () => {
                   <Form.Group widths="equal">
                     <Form.Input icon="key" label="Password" placeholder="minimum 6 characters" />
                   </Form.Group>
-                  {/* <Form.Group widths="equal">
-                    <Form.Input icon="key" label="Confirm Password" placeholder="minimum 6 characters" />
-                  </Form.Group> */}
                   <Form.Button>Log In</Form.Button>
                 </Form>
               </Grid.Column>
