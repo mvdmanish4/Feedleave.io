@@ -96,10 +96,10 @@ class Login extends Component {
                       <Form.Input value={email} onChange={event => this.setState(updateByPropertyName('email', event.target.value))} icon="mail" label="Email" placeholder="Email Address" />
                     </Form.Group>
                     <Form.Group widths="equal">
-                      <Form.Input value={password} onChange={event => this.setState(updateByPropertyName('password', event.target.value))} icon="key" label="Password" placeholder="minimum 6 characters" />
+                      <Form.Input value={password} onChange={event => this.setState(updateByPropertyName('password', event.target.value))} icon="key" label="Password" type="password" placeholder="minimum 6 characters" />
                     </Form.Group>
                     { error && <p>{error.message}</p> }
-                    <Form.Button>Log In</Form.Button>
+                    <Form.Button disabled={isInvalid} type="submit">Log In</Form.Button>
                   </Form>
                 </Grid.Column>
               </Grid.Row>

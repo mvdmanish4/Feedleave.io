@@ -98,15 +98,15 @@ const config = {
       subTitle:
         'Text',
       path: '/signup'
+    },
+    forget: {
+      component: 'Forget',
+      label: 'Forget',
+      icon: 'road',
+      subTitle:
+        'Text',
+      path: '/forget'
     }
-    // forget: {
-    //   component: 'Forget',
-    //   label: 'Forget',
-    //   icon: 'road',
-    //   subTitle:
-    //     'Text',
-    //   path: '/forget'
-    // }
   },
   projects: [
     {

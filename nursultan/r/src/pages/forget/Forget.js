@@ -53,10 +53,11 @@ const Forget = () => {
           <Grid columns="three" stackable divided padded>
             <Grid.Row>
               <Grid.Column width={10}>
-                {/* <h4 id="article-title">By continuing, you agree to our Terms of Use and Privacy Policy.</h4> */}
+                <h4 id="article-title">Reset Password</h4>
+                <p>We can help you reset your password using your email address linked to your account.</p>
                 <Form>
                   <Form.Group widths="equal">
-                    <Form.Input icon="mail" label="Email" placeholder="Email Address" />
+                    <Form.Input icon="mail" label="" placeholder="Email Address" />
                   </Form.Group>
                   {/* <Form.Group widths="equal">
                     <Form.Input icon="key" label="Password" placeholder="minimum 6 characters" />
@@ -64,7 +65,7 @@ const Forget = () => {
                   {/* <Form.Group widths="equal">
                     <Form.Input icon="key" label="Confirm Password" placeholder="minimum 6 characters" />
                   </Form.Group> */}
-                  <Form.Button>Log In</Form.Button>
+                  <Form.Button>Reset Password</Form.Button>
                 </Form>
               </Grid.Column>
             </Grid.Row>
