@@ -28,7 +28,7 @@ class Home extends Component {
               <Grid.Row>
                 <Grid.Column width={8}>
                   <Image
-                    src="img/aboutus/office.jpg"
+                    src="img/home/internship.jpg"
                     alt="feedleave"
                     width="90%"
                     height="90%"
@@ -44,7 +44,7 @@ class Home extends Component {
                     /> */}
                   </Grid.Column>
                   <Grid.Column verticalAlign="middle">
-                    <h1 id="home-h1">feedleave</h1>
+                    <h1 id="home-h1">Build a roadmap</h1>
                   </Grid.Column>
                   <Header
                     as="h2"
@@ -52,8 +52,9 @@ class Home extends Component {
                     content="Find reviews and suggestions about internships in Silicon Valley"
                     inverted
                   />
+                  <br />
                   <a
-                    href="/forget"
+                    href="/login"
                     // target="_blank"
                   >
                     <Button primary size="huge" color="facebook">
@@ -67,7 +68,7 @@ class Home extends Component {
           </Container>
         </Segment>
 
-        <Segment vertical>
+        {/* <Segment vertical>
           <Grid container stackable>
             <Grid.Row>
               <Grid.Column width={8}>
@@ -98,7 +99,7 @@ class Home extends Component {
             </Grid.Row>
             <br />
           </Grid>
-        </Segment>
+        </Segment> */}
 
         <Segment
           inverted
@@ -109,7 +110,7 @@ class Home extends Component {
             <Grid inverted stackable>
               <Grid.Row>
                 <Grid.Column width={16}>
-                  {siteLabel} - {copyrightYear}
+                  {copyrightYear} © {siteLabel}
                 </Grid.Column>
               </Grid.Row>
             </Grid>

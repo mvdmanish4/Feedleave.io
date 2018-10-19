@@ -64,7 +64,7 @@ const PageMainFooter = props => {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column width={16}>
-              {siteLabel} - {copyrightYear}
+              {copyrightYear} © {siteLabel}
             </Grid.Column>
           </Grid.Row>
         </Grid>

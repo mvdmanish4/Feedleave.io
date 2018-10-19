@@ -18,7 +18,7 @@ class Reviews extends Component {
   renderProjectsHeader = () => {
     const projects = this.countProjects(config.projects)
     const { selectedCategory } = this.state
-    const activeColor = 'olive'
+    const activeColor = 'pink'
     const deActiveColor = 'linkedin'
     const result = Object.keys(projects).map(category => {
       const buttonColor =
@@ -56,11 +56,11 @@ class Reviews extends Component {
     return results.map(project => {
       return (
         <Card color="olive" key={project.id}>
-          {/* <Image src={project.thumbnail} /> */}
+          <Image src={project.thumbnail} />
           <Card.Content>
             <Card.Header>{project.name}</Card.Header>
           </Card.Content>
-          <Card.Content extra>{project.category}</Card.Content>
+          {/* <Card.Content extra>{project.category}</Card.Content> */}
           <Card.Content extra>{project.type}</Card.Content>
           <Card.Content extra>{project.author}</Card.Content>
           <Card.Content extra>{project.release_date}</Card.Content>

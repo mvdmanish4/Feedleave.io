@@ -6,7 +6,8 @@ import {
   Icon,
   Form,
   Message,
-  Divider
+  Divider,
+  Button
 } from 'semantic-ui-react'
 import { auth, db } from './../../firebase/firebase'
 import PropTypes from 'prop-types'
@@ -74,10 +75,10 @@ class Signup extends Component {
       <div>
         <Segment basic>
           <Container>
-            <Grid columns="three" stackable divided padded>
-              <Grid.Row>
-                <Grid.Column width={10}>
-                  <h4 id="article-title">By continuing, you agree to our Terms of Use and Privacy Policy.</h4>
+            <Grid columns="one" stackable divided padded>
+              <Grid.Row centered>
+                <Grid.Column width={6}>
+                  <h4 id="page-title"><font size="6">Sign Up</font></h4>
                   <Form onSubmit={this.onSubmit}>
                     <Form.Group widths="equal">
                       <Form.Input value={username} onChange={event => this.setState(updateByPropertyName('username', event.target.value))} icon="user" label="Name" placeholder="Name" />
@@ -92,7 +93,11 @@ class Signup extends Component {
                       <Form.Input value={passwordTwo} onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))} icon="key" label="Confirm Password" type="password" placeholder="minimum 6 characters" />
                     </Form.Group>
                     { error && <p>{error.message}</p> }
-                    <Form.Button disabled={isInvalid} type="submit">Sign Up</Form.Button>
+                    <h4 id="article-title"><font size="4">By continuing, you agree to our Terms of Use and Privacy Policy.</font></h4>
+                    <Form.Button fluid disabled={isInvalid} color="black" type="submit">Sign Up</Form.Button>
+                    <Button fluid color='linkedin'>
+                      <Icon name='linkedin' /> LinkedIn
+                    </Button>
                   </Form>
                 </Grid.Column>
               </Grid.Row>

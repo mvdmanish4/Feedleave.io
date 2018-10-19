@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu, Container, Image, Grid } from 'semantic-ui-react'
+import { Menu, Container, Image, Grid, Input } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 
@@ -29,16 +29,20 @@ class MainNav extends Component {
   renderDesktopMenu = (url, label, subpages) => {
     const menuItems = this.renderMenuItems(subpages)
     return (
-      <Menu fixed="top" color={'blue'} inverted>
+      <Menu fixed="top" color={'blue'} pointing secondary>
+        {/* inverted */}
         <Container>
           <Menu.Item as={NavLink} header link to={'/'}>
-            {/* <Image
-              size="mini"
+            <Image
+              size="tiny"
               src={url}
               alt={label}
-            /> */}
-            &nbsp; &nbsp;
-            {label}
+            />
+            {/* &nbsp; &nbsp; */}
+            {/* {label} */}
+          </Menu.Item>
+          <Menu.Item>
+            <Input icon='search' placeholder='Search...' />
           </Menu.Item>
           <Menu.Menu position="right">{menuItems}</Menu.Menu>
         </Container>
@@ -57,9 +61,12 @@ class MainNav extends Component {
               alt={label}
               style={{ marginRight: '1.5em' }}
             /> */}
-            &nbsp; &nbsp;
+            {/* &nbsp; &nbsp; */}
             {label}
           </Menu.Item>
+          {/* <Menu.Item>
+            <Input icon='search' placeholder='Search...' />
+          </Menu.Item> */}
           <Menu.Menu position="right">
             <Menu.Item
               link

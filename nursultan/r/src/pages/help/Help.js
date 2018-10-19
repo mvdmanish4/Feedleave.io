@@ -14,7 +14,7 @@ const propTypes = {
 const Help = () => (
   <Segment basic>
     <Container>
-      <h3 id="category-title">Help</h3>
+      <h4 id="category-title">User Guide</h4>
       <Grid columns="three" stackable divided padded>
         <Grid.Row style={{marginBottom: 40}}>
           <Grid.Column>

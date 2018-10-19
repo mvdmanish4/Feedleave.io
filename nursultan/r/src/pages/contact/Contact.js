@@ -51,7 +51,7 @@ const Contact = () => {
                     label="Message"
                     placeholder="Your message goes here..."
                   />
-                  <Form.Button>Submit</Form.Button>
+                  <Form.Button color="black">Submit</Form.Button>
                 </Form>
               </Grid.Column>
               {/* <Grid.Column width={6}>

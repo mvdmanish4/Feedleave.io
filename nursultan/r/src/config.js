@@ -1,10 +1,11 @@
 // favicon
 const config = {
-  homepage: 'http://www.siteurl.com',
+  homepage: 'http://www.feedleave.io',
   email: 'help@feedleave.io',
   phone: '(888) 888 88 88',
   siteLabel: 'feedleave',
-  siteLogoUrl: 'img/react-rapid-logo-512.png',
+  siteLogoUrl: 'img/Slice.png',
+  // react-rapid-logo-512.png
   footer: {
     message:
       'Bottom.',
@@ -112,7 +113,7 @@ const config = {
     {
       id: 1,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-01.jpeg',
+      thumbnail: '/img/projects/project-01.jpg',
       category: 'Google',
       release_date: '08/12/2018',
       author: 'Babette Sussans',
@@ -122,7 +123,7 @@ const config = {
     {
       id: 2,
       name: 'Product Manager',
-      thumbnail: '/img/projects/project-02.jpeg',
+      thumbnail: '/img/projects/project-01.jpg',
       category: 'Google',
       release_date: '01/01/2018',
       author: 'Budd Pray',
@@ -132,17 +133,17 @@ const config = {
     {
       id: 3,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-03.jpeg',
+      thumbnail: '/img/projects/project-01.jpg',
       category: 'Google',
       release_date: '09/20/2018',
-      author: 'Jennee Ales0',
+      author: 'Jennee Ales',
       type: 'CV, Pitch, Interview',
       views: '100'
     },
     {
       id: 4,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-04.jpeg',
+      thumbnail: '/img/projects/project-01.jpg',
       category: 'Google',
       release_date: '05/02/2018',
       author: 'Linea Piaggia',
@@ -152,7 +153,7 @@ const config = {
     {
       id: 5,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-05.jpeg',
+      thumbnail: '/img/projects/project-01.jpg',
       category: 'Google',
       release_date: '06/24/2018',
       author: 'Marwin Hernik',
@@ -162,7 +163,7 @@ const config = {
     {
       id: 6,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-06.jpeg',
+      thumbnail: '/img/projects/project-02.jpg',
       category: 'Apple',
       release_date: '04/30/2018',
       author: 'Herculie Scone',
@@ -171,8 +172,8 @@ const config = {
     },
     {
       id: 7,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-07.jpeg',
+      name: 'Hardware Engineer',
+      thumbnail: '/img/projects/project-02.jpg',
       category: 'Apple',
       release_date: '07/28/2018',
       author: 'Emlen Giacobo',
@@ -182,7 +183,7 @@ const config = {
     {
       id: 8,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-08.jpeg',
+      thumbnail: '/img/projects/project-02.jpg',
       category: 'Apple',
       release_date: '11/29/2018',
       author: 'Vonnie Poytheras',
@@ -192,7 +193,7 @@ const config = {
     {
       id: 9,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-09.jpeg',
+      thumbnail: '/img/projects/project-02.jpg',
       category: 'Apple',
       release_date: '03/14/2018',
       author: 'Stacie Ledes',
@@ -202,7 +203,7 @@ const config = {
     {
       id: 10,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-10.jpeg',
+      thumbnail: '/img/projects/project-02.jpg',
       category: 'Apple',
       release_date: '10/04/2018',
       author: 'Thedrick Scading',
@@ -212,7 +213,7 @@ const config = {
     {
       id: 11,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-11.jpeg',
+      thumbnail: '/img/projects/project-03.jpg',
       category: 'Microsoft',
       release_date: '06/09/2018',
       author: 'Fredek Undrill',
@@ -222,7 +223,7 @@ const config = {
     {
       id: 12,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-12.jpeg',
+      thumbnail: '/img/projects/project-03.jpg',
       category: 'Microsoft',
       release_date: '01/06/2018',
       author: 'Maury Rickeard',
@@ -232,7 +233,7 @@ const config = {
     {
       id: 13,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-13.jpeg',
+      thumbnail: '/img/projects/project-03.jpg',
       category: 'Microsoft',
       release_date: '04/23/2018',
       author: 'Lindsy Fennessy',
@@ -242,7 +243,7 @@ const config = {
     {
       id: 14,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-14.jpeg',
+      thumbnail: '/img/projects/project-03.jpg',
       category: 'Microsoft',
       release_date: '03/20/2018',
       author: 'Vitia Cancellieri',
@@ -252,7 +253,7 @@ const config = {
     {
       id: 15,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-15.jpeg',
+      thumbnail: '/img/projects/project-03.jpg',
       category: 'Microsoft',
       release_date: '01/08/2018',
       author: 'Glad Casarini',
@@ -262,7 +263,7 @@ const config = {
     {
       id: 16,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-16.jpeg',
+      thumbnail: '/img/projects/project-03.jpg',
       category: 'Microsoft',
       release_date: '01/19/2018',
       author: 'Georgeanne Raatz',
@@ -272,7 +273,7 @@ const config = {
     {
       id: 17,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-17.jpeg',
+      thumbnail: '/img/projects/project-03.jpg',
       category: 'Microsoft',
       release_date: '08/10/2018',
       author: 'Gerrard Kemer',
@@ -282,7 +283,7 @@ const config = {
     {
       id: 18,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-18.jpeg',
+      thumbnail: '/img/projects/project-04.jpg',
       category: 'Amazon',
       release_date: '05/02/2018',
       author: 'Sammy Callander',
@@ -292,7 +293,7 @@ const config = {
     {
       id: 19,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-19.jpeg',
+      thumbnail: '/img/projects/project-04.jpg',
       category: 'Amazon',
       release_date: '09/02/2018',
       author: 'Wright Downham',
@@ -302,7 +303,7 @@ const config = {
     {
       id: 20,
       name: 'Software Engineer',
-      thumbnail: '/img/projects/project-20.jpeg',
+      thumbnail: '/img/projects/project-04.jpg',
       category: 'Amazon',
       release_date: '09/25/2018',
       author: 'Terrel Jacomb',
