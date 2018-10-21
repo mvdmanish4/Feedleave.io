@@ -8,7 +8,8 @@ import {
   Icon,
   Image,
   List,
-  Segment
+  Segment,
+  Statistic
 } from 'semantic-ui-react'
 
 const propTypes = {
@@ -55,7 +56,7 @@ class Home extends Component {
                   <br />
                   <a
                     href="/login"
-                    // target="_blank"
+                  // target="_blank"
                   >
                     <Button primary size="huge" color="facebook">
                       <Icon name="write" />
@@ -67,7 +68,6 @@ class Home extends Component {
             </Grid>
           </Container>
         </Segment>
-
         {/* <Segment vertical>
           <Grid container stackable>
             <Grid.Row>

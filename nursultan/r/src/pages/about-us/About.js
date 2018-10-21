@@ -18,33 +18,24 @@ const propTypes = {
 }
 const panes = [
   {
-    menuItem: 'OUR VISION',
+    menuItem: 'STUDENTS',
     render: () => {
       return (
         <Tab.Pane attached={false}>
           <p>
-            some text.
+            Students can easily find information about internships.
           </p>
         </Tab.Pane>
       )
     }
   },
   {
-    menuItem: 'OUR WORK',
+    menuItem: 'ALUMNI',
     render: () => {
       return (
         <Tab.Pane attached={false}>
           <p>
-            Et offendit do nostrud, eram ingeniis e concursionibus hic quorum e
-            mentitum ex fugiat, cillum constias nam arbitror. Tempor constias ab
-            graviterque. Noster ea ad eram aliquip. Ad cillum elit aut possumus,
-            mentitum in quibusdam, illum nam doctrina id illum ad a eram
-            appellat.Offendit quo quamquam te et te illustriora ita velit hic
-            laborum est expetendis enim dolore probant quae, commodo aute
-            commodo appellat, ita noster velit irure ullamco, ex iudicem te
-            consequat, fabulas qui fugiat singulis. Ubi minim duis est possumus.
-            Amet est ingeniis, an ullamco aut admodum, nam quorum occaecat
-            praesentibus eu e iudicem relinqueret.
+            Alumni can easily share information for students.
           </p>
         </Tab.Pane>
       )
@@ -53,6 +44,22 @@ const panes = [
 ]
 const About = () => (
   <div>
+    <Segment basic>
+      <Container>
+        <Grid columns={1} stackable>
+          <Grid.Column>
+            <h3 id="category-title">Project Benefits</h3>
+            {/* <h4 id="article-title">What's the structure of JavaScript?</h4> */}
+            <div id="article-content">
+              <Tab menu={{ secondary: true }} panes={panes} />
+            </div>
+          </Grid.Column>
+          {/* <Grid.Column>
+            <Image src="" />
+          </Grid.Column> */}
+        </Grid>
+      </Container>
+    </Segment>
     <Segment
       inverted
       basic
@@ -125,15 +132,54 @@ const About = () => (
           </Grid.Column>
           <Grid.Column>
             Sprint 1
-            <Progress percent={100} progress color="red" />
+            <Progress percent={100} progress color="green" />
             Sprint 2
             <Progress percent={20} progress color="orange" />
             Sprint 3
             <Progress percent={0} progress color="yellow" />
             Sprint 4
-            <Progress percent={0} progress color="green" />
+            <Progress percent={0} progress color="red" />
           </Grid.Column>
         </Grid>
+      </Container>
+    </Segment>
+    <Segment basic>
+      <Container>
+        <Divider />
+        <Statistic.Group widths="3" align="center" color="blue">
+          <Statistic>
+            <Statistic.Value>
+              <Icon name="write" />
+              2
+            </Statistic.Value>
+            <Statistic.Label>reviews</Statistic.Label>
+          </Statistic>
+
+          <Statistic>
+            <Statistic.Value>
+              <Icon name="star" />
+              4
+            </Statistic.Value>
+            <Statistic.Label>ratings</Statistic.Label>
+          </Statistic>
+
+          <Statistic>
+            <Statistic.Value>
+              <Icon name="users" />
+              4
+            </Statistic.Value>
+            <Statistic.Label>users</Statistic.Label>
+          </Statistic>
+
+          {/* <Statistic>
+            <Statistic.Value>
+              <Icon name="heart" style={{ color: 'red' }} />
+              1
+            </Statistic.Value>
+            <Statistic.Label>something</Statistic.Label>
+          </Statistic> */}
+        </Statistic.Group>
+        {/* <Divider /> */}
       </Container>
     </Segment>
   </div>

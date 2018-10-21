@@ -95,6 +95,7 @@ class Signup extends Component {
                     { error && <p>{error.message}</p> }
                     <h4 id="article-title"><font size="4">By continuing, you agree to our Terms of Use and Privacy Policy.</font></h4>
                     <Form.Button fluid disabled={isInvalid} color="black" type="submit">Sign Up</Form.Button>
+                    <Divider horizontal>or</Divider>
                     <Button fluid color='linkedin'>
                       <Icon name='linkedin' /> LinkedIn
                     </Button>

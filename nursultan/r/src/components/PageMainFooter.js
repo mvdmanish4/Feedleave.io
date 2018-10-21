@@ -57,7 +57,7 @@ const PageMainFooter = props => {
               </Grid.Row> */}
               <Grid.Row style={{marginBottom: 10}}>
                 <Grid.Column>
-                  {renderSocialMediaLinks(socialMediaLinks)}
+                  {/* {renderSocialMediaLinks(socialMediaLinks)} */}
                 </Grid.Column>
               </Grid.Row>
             </Grid.Column>

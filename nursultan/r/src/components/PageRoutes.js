@@ -9,6 +9,7 @@ import Terms from '../pages/terms/Terms'
 import Login from '../pages/login/Login'
 import Signup from '../pages/signup/Signup'
 import Forget from '../pages/forget/Forget'
+import Read from '../pages/read/Read'
 
 const propTypes = {
   path: PropTypes.string,
@@ -44,6 +45,9 @@ class PageRoutes extends React.Component {
         </Route>
         < Route path="/forget">
           <Forget pageData={activePage} />
+        </Route>
+        < Route path="/read">
+          <Read pageData={activePage} />
         </Route>
       </Switch>
     )

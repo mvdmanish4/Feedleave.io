@@ -128,6 +128,18 @@ color: black;
 font-family: 'Roboto', sans-serif;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
 #page-header-home {
   background-image: url('/img/background.jpg');
   background-attachment: fixed;

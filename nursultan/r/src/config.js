@@ -100,14 +100,22 @@ const config = {
         'Text',
       path: '/signup'
     },
-    forget: {
-      component: 'Forget',
-      label: 'Forget',
+    read: {
+      component: 'Read',
+      label: 'Read',
       icon: 'road',
       subTitle:
         'Text',
-      path: '/forget'
+      path: '/read'
     }
+    // forget: {
+    //   component: 'Forget',
+    //   label: 'Forget',
+    //   icon: 'road',
+    //   subTitle:
+    //     'Text',
+    //   path: '/forget'
+    // }
   },
   projects: [
     {
@@ -310,7 +318,20 @@ const config = {
       type: 'CV, Pitch, Interview',
       views: '100'
     }
+  ],
+  reviewsss: [
+    {
+      id: 1,
+      name: 'Software Engineer',
+      thumbnail: '/img/projects/project-01.jpg',
+      category: 'Google',
+      release_date: '08/12/2018',
+      author: 'Babette Sussans',
+      type: 'CV, Pitch, Interview',
+      views: '100'
+    }
   ]
 }
+
 
 export default config
