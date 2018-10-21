@@ -39,9 +39,10 @@ const Contact = () => {
       <Segment basic>
         <Container>
           <Grid columns="three" stackable divided padded>
+            <h4 id="page-title"><font size="6">Contact Us</font></h4>
             <Grid.Row>
               <Grid.Column width={10}>
-                <h4 id="article-title">Please, fill out all required fields.</h4>
+                {/* <h4 id="article-title">Please, fill out all required fields.</h4> */}
                 <Form>
                   <Form.Group widths="equal">
                     <Form.Input icon="user" label="Name" placeholder="name" />
@@ -51,7 +52,7 @@ const Contact = () => {
                     label="Message"
                     placeholder="Your message goes here..."
                   />
-                  <Form.Button color="black">Submit</Form.Button>
+                  <Form.Button color="blue">Submit</Form.Button>
                 </Form>
               </Grid.Column>
               {/* <Grid.Column width={6}>

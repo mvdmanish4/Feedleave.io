@@ -10,7 +10,8 @@ import {
   Icon,
   Tab,
   Statistic,
-  Divider
+  Divider,
+  List
 } from 'semantic-ui-react'
 
 const propTypes = {
@@ -22,21 +23,24 @@ const panes = [
     render: () => {
       return (
         <Tab.Pane attached={false}>
-          <p>
-            Students can easily find information about internships.
-          </p>
+          <List bulleted>
+            <List.Item>People can make informed decisions about the internship.</List.Item>
+            <List.Item>All information about internship experiences can be available at one central location.</List.Item>
+            <List.Item>The trusted resource from alumni, staff, and experienced people.</List.Item>
+          </List>
         </Tab.Pane>
       )
     }
   },
   {
-    menuItem: 'ALUMNI',
+    menuItem: 'ALUMNI & EXPERIENCED STUDENTS',
     render: () => {
       return (
         <Tab.Pane attached={false}>
-          <p>
-            Alumni can easily share information for students.
-          </p>
+          <List bulleted>
+            <List.Item>Experienced people will not get the same type of questions.</List.Item>
+            <List.Item>Easily share the information with students.</List.Item>
+          </List>
         </Tab.Pane>
       )
     }
@@ -48,7 +52,7 @@ const About = () => (
       <Container>
         <Grid columns={1} stackable>
           <Grid.Column>
-            <h3 id="category-title">Project Benefits</h3>
+            <h3 id="category-title">Product Benefits</h3>
             {/* <h4 id="article-title">What's the structure of JavaScript?</h4> */}
             <div id="article-content">
               <Tab menu={{ secondary: true }} panes={panes} />
@@ -120,23 +124,22 @@ const About = () => (
         <h3 id="category-title">Product Roadmap</h3>
         <Grid columns={2} stackable verticalAlign="top">
           <Grid.Column>
-            <h4 id="article-title">Agile Development</h4>
+            <h4 id="article-title">Product Development Process</h4>
             <div id="article-content">
-              <p>
-                We develop the project under SEM course. We use Agile methodology for developing process.
-              </p>
-              <p>
-                We plan to finish it in four sprints.
-              </p>
+              <List bulleted>
+                <List.Item>We develop the project under the SEM course.</List.Item>
+                <List.Item>We use Agile methodology for developing process.</List.Item>
+                <List.Item>We plan to finish the project in 4 sprints.</List.Item>
+              </List>
             </div>
           </Grid.Column>
           <Grid.Column>
             Sprint 1
             <Progress percent={100} progress color="green" />
             Sprint 2
-            <Progress percent={20} progress color="orange" />
+            <Progress percent={20} progress color="yellow" />
             Sprint 3
-            <Progress percent={0} progress color="yellow" />
+            <Progress percent={0} progress color="red" />
             Sprint 4
             <Progress percent={0} progress color="red" />
           </Grid.Column>
@@ -145,7 +148,8 @@ const About = () => (
     </Segment>
     <Segment basic>
       <Container>
-        <Divider />
+        <h3 id="category-title">Statistics</h3>
+        {/* <Divider /> */}
         <Statistic.Group widths="3" align="center" color="blue">
           <Statistic>
             <Statistic.Value>

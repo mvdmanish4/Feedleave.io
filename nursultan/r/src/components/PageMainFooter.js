@@ -39,29 +39,29 @@ const PageMainFooter = props => {
     >
       <Container textAlign="center">
         <Grid inverted stackable>
-          <Grid.Row verticalAlign="top">
+          {/* <Grid.Row verticalAlign="top">
             <Grid.Column computer={1} tablet={2} mobile={16} align="center">
-              {/* <Image
+              <Image
                 id="footer-logo"
                 src={siteLogoUrl}
                 alt={siteLabel}
-              /> */}
+              />
             </Grid.Column>
             <Grid.Column computer={6} tablet={6} mobile={16} id="footer-message">{message}</Grid.Column>
             <Grid.Column computer={9} tablet={8} mobile={16} id="footer-contact-links">
-              {/* <Grid.Row style={{marginBottom: 10}}>
+              <Grid.Row style={{marginBottom: 10}}>
                 <Grid.Column>CALL. <strong>{phone}</strong></Grid.Column>
-              </Grid.Row> */}
-              {/* <Grid.Row style={{marginBottom: 10}}>
+              </Grid.Row>
+              <Grid.Row style={{marginBottom: 10}}>
                 <Grid.Column>EMAIL. <a href={`mailto:${email}`}>{email}</a></Grid.Column>
-              </Grid.Row> */}
+              </Grid.Row>
               <Grid.Row style={{marginBottom: 10}}>
                 <Grid.Column>
-                  {/* {renderSocialMediaLinks(socialMediaLinks)} */}
+                  {renderSocialMediaLinks(socialMediaLinks)}
                 </Grid.Column>
               </Grid.Row>
             </Grid.Column>
-          </Grid.Row>
+          </Grid.Row> */}
           <Grid.Row>
             <Grid.Column width={16}>
               {copyrightYear} © {siteLabel}

@@ -9,52 +9,58 @@ import {
   Label,
   Card,
   Button,
-  Rating
+  Rating,
+  List
 } from 'semantic-ui-react'
+import config from '../../config'
 
 const propTypes = {
   // pageData: PropTypes.object.isRequired
 }
-
-// const INITIAL_STATE = {
-//   rating: '',
-//   maxRating: ''
-// }
+// const readReview = this.countProjects(config.read_review)
 
 class Read extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = { ...INITIAL_STATE }
-  // }
-  // handleRate = (event) => {
-  //   const { rating, maxRating } = this.state
-  //   this.setState(() => ({ rating, maxRating }))
-  //   event.preventDefault()
-  // }
+  constructor(props) {
+    super(props)
+    this.state = {
+      rating: 0,
+      maxRating: 5
+    }
+  }
+  onRate = (e, { rating, maxRating }) => this.setState({ rating, maxRating })
+  // let results = [...projects]
+
   render() {
     return (
       <Segment basic>
         <Container>
-          <h3 id="category-title">Read Review</h3>
-          <Rating icon="star" size="large" maxRating={5} onRate={this.handleRate} />
-          <br />
-          <br />
-          {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
-          {/* <h4 id="article-title">General Information</h4> */}
-          <Card.Group>
+          <h3 id="category-title">Background Information</h3>
+          {/*  */}
+          <List divided horizontal size='large'>
+            <List.Item><strong>James Bond</strong></List.Item>
+            <List.Item>21/10/2018</List.Item>
+            <List.Item>17 views</List.Item>
+            <List.Item>
+              <Rating icon="star" size="large" maxRating={5} onRate={this.onRate} />
+              {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
+            </List.Item>
+          </List>
+          <br /><br />
+          <Card.Group itemsPerRow="2" stackable>
             <Card>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
+                <Image floated='right' size='tiny' src='img/read/company.png' />
                 <Card.Header>Company</Card.Header>
                 <Card.Meta>name</Card.Meta>
                 <Card.Description>
                   Google
+                  {/* {project.name} */}
                 </Card.Description>
               </Card.Content>
             </Card>
             <Card>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
+                <Image floated='right' size='tiny' src='img/read/position.png' />
                 <Card.Header>Position</Card.Header>
                 <Card.Meta>internship type</Card.Meta>
                 <Card.Description>
@@ -64,7 +70,7 @@ class Read extends Component {
             </Card>
             <Card>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
+                <Image floated='right' size='tiny' src='img/read/experience.png' />
                 <Card.Header>Experience</Card.Header>
                 <Card.Meta># of prior years</Card.Meta>
                 <Card.Description>
@@ -74,7 +80,7 @@ class Read extends Component {
             </Card>
             <Card>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
+                <Image floated='right' size='tiny' src='img/read/university.png' />
                 <Card.Header>University</Card.Header>
                 <Card.Meta>attended during internship</Card.Meta>
                 <Card.Description>
@@ -84,7 +90,7 @@ class Read extends Component {
             </Card>
             <Card>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
+                <Image floated='right' size='tiny' src='img/read/leetcode.png' />
                 <Card.Header>Leetcode</Card.Header>
                 <Card.Meta>how many problems solved</Card.Meta>
                 <Card.Description>
@@ -94,7 +100,7 @@ class Read extends Component {
             </Card>
             <Card>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
+                <Image floated='right' size='tiny' src='img/read/offers.png' />
                 <Card.Header>Offers</Card.Header>
                 <Card.Meta>total number</Card.Meta>
                 <Card.Description>
@@ -104,7 +110,7 @@ class Read extends Component {
             </Card>
             <Card fluid>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
+                <Image floated='right' size='tiny' src='img/read/applications.png' />
                 <Card.Header>Applications (5)</Card.Header>
                 <Card.Meta>names of companies</Card.Meta>
                 <Card.Description>
@@ -118,7 +124,7 @@ class Read extends Component {
           <Card.Group>
             <Card fluid>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
+                <Image floated='right' size='tiny' src='img/read/cv.png' />
                 <Card.Header>CV</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>
@@ -129,7 +135,7 @@ class Read extends Component {
             </Card>
             <Card fluid>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
+                <Image floated='right' size='tiny' src='img/read/applications.png' />
                 <Card.Header>Pitch</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>
@@ -140,39 +146,31 @@ class Read extends Component {
             </Card>
             <Card fluid>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
-                <Card.Header>Prepare for behavior questions</Card.Header>
+                <Image floated='right' size='tiny' src='img/read/interview.png' />
+                <Card.Header>Interview Preparation</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>
+                  <p>- Prepare for behavior questions</p>
                   <p>- Search common questions online, write down your own answers, review them before any interview</p>
-                </Card.Description>
-              </Card.Content>
-            </Card>
-            <Card fluid>
-              <Card.Content>
-                <Image floated='right' size='mini' src='' />
-                <Card.Header>Projects</Card.Header>
-                <Card.Meta>attended during internship</Card.Meta>
-                <Card.Description>
                   <p>- Prepare 1-minute brief description for all the projects or activities on your resume (content, contribution)</p>
                 </Card.Description>
               </Card.Content>
             </Card>
             <Card fluid>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
-                <Card.Header>Practice technical problems</Card.Header>
+                <Image floated='right' size='tiny' src='img/read/technical.png' />
+                <Card.Header>Technical Questions</Card.Header>
                 <Card.Meta>how to impove</Card.Meta>
                 <Card.Description>
-                  <p>- including algorithms, system design, database</p>
-                  <p>- practice coding and explaining at the same time</p>
+                  <p>- practice algorithms, system design, database</p>
+                  <p>- practice coding and explaining at the same time on the board</p>
                   <p>- write code in the google document</p>
                 </Card.Description>
               </Card.Content>
             </Card>
             <Card fluid>
               <Card.Content>
-                <Image floated='right' size='mini' src='' />
+                <Image floated='right' size='tiny' src='img/read/onsite.png' />
                 <Card.Header>On-site interview</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>

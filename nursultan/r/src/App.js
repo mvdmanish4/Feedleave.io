@@ -42,7 +42,7 @@ class App extends Component {
           >
             <PageMobileNav subpages={pages} />
           </Sidebar>
-          <Sidebar.Pusher>
+          <Sidebar.Pusher dimmed={visible}>
             <MainNav
               subpages={pages}
               siteLabel={siteLabel}

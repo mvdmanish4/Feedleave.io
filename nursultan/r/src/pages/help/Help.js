@@ -10,12 +10,12 @@ import {
 const propTypes = {
   pageData: PropTypes.object.isRequired
 }
-
 const Help = () => (
   <Segment basic>
     <Container>
-      <h4 id="category-title">User Guide</h4>
-      <Grid columns="three" stackable divided padded>
+      {/* <h4 id="category-title">User Guide</h4> */}
+      <h4 id="page-title"><font size="6">User Guide</font></h4>
+      <Grid columns="three" stackable padded>
         <Grid.Row style={{marginBottom: 40}}>
           <Grid.Column>
             <h4 id="article-title">

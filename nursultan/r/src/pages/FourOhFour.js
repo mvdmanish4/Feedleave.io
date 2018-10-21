@@ -17,16 +17,15 @@ const FourOhFour = () => (
     <br />
     <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
+        <Image src="img/general/404.png" />
         <Header as="h1" color="teal" textAlign="center">
-          <Image src="img/atomic-256.png" />
-          <br />
           404
           <br />
           Page Not Found
         </Header>
         <Message>
           The page you are looking for does not exist or another error occured.{' '}
-          <a href="/">Click here</a> to go to home page.
+          <strong><a href="/">Click here</a></strong> to go to home page.
         </Message>
       </Grid.Column>
     </Grid>

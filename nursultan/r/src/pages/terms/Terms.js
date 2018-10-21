@@ -15,8 +15,8 @@ const Terms = () => (
   <div>
     <Segment basic>
       <Container>
-        {/* <h3 id="category-title">Terms of Service</h3> */}
-        <Grid columns={2} stackable verticalAlign="top">
+        <h4 id="page-title"><font size="6">Terms of Service</font></h4>
+        <Grid columns={1} stackable verticalAlign="top">
           <Grid.Column>
             <h4 id="article-title">Introduction</h4>
             <div id="article-content">

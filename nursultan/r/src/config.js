@@ -4,11 +4,11 @@ const config = {
   email: 'help@feedleave.io',
   phone: '(888) 888 88 88',
   siteLabel: 'feedleave',
-  siteLogoUrl: 'img/Slice.png',
+  siteLogoUrl: 'img/general/Slice.png',
   // react-rapid-logo-512.png
   footer: {
     message:
-      'Bottom.',
+      '',
     copyrightYear: 2018
   },
   socialMediaLinks: [
@@ -51,6 +51,14 @@ const config = {
       subTitle:
         'Find reviews and suggestions about internship in Silicon Valley.',
       path: '/reviews'
+    },
+    read: {
+      component: 'Read',
+      label: 'Read',
+      icon: 'road',
+      subTitle:
+        'Text',
+      path: '/read'
     },
     about: {
       component: 'About',
@@ -100,29 +108,21 @@ const config = {
         'Text',
       path: '/signup'
     },
-    read: {
-      component: 'Read',
-      label: 'Read',
+    forget: {
+      component: 'Forget',
+      label: 'Forget',
       icon: 'road',
       subTitle:
         'Text',
-      path: '/read'
+      path: '/forget'
     }
-    // forget: {
-    //   component: 'Forget',
-    //   label: 'Forget',
-    //   icon: 'road',
-    //   subTitle:
-    //     'Text',
-    //   path: '/forget'
-    // }
   },
-  projects: [
+  reviews: [
     {
       id: 1,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-01.jpg',
-      category: 'Google',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-01.jpg',
+      company: 'Google',
       release_date: '08/12/2018',
       author: 'Babette Sussans',
       type: 'CV, Pitch, Interview',
@@ -130,9 +130,9 @@ const config = {
     },
     {
       id: 2,
-      name: 'Product Manager',
-      thumbnail: '/img/projects/project-01.jpg',
-      category: 'Google',
+      position: 'Product Manager',
+      thumbnail: '/img/company/project-01.jpg',
+      company: 'Google',
       release_date: '01/01/2018',
       author: 'Budd Pray',
       type: 'CV, Pitch, Interview',
@@ -140,9 +140,9 @@ const config = {
     },
     {
       id: 3,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-01.jpg',
-      category: 'Google',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-01.jpg',
+      company: 'Google',
       release_date: '09/20/2018',
       author: 'Jennee Ales',
       type: 'CV, Pitch, Interview',
@@ -150,9 +150,9 @@ const config = {
     },
     {
       id: 4,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-01.jpg',
-      category: 'Google',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-01.jpg',
+      company: 'Google',
       release_date: '05/02/2018',
       author: 'Linea Piaggia',
       type: 'CV, Pitch, Interview',
@@ -160,9 +160,9 @@ const config = {
     },
     {
       id: 5,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-01.jpg',
-      category: 'Google',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-01.jpg',
+      company: 'Google',
       release_date: '06/24/2018',
       author: 'Marwin Hernik',
       type: 'CV, Pitch, Interview',
@@ -170,9 +170,9 @@ const config = {
     },
     {
       id: 6,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-02.jpg',
-      category: 'Apple',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-02.jpg',
+      company: 'Apple',
       release_date: '04/30/2018',
       author: 'Herculie Scone',
       type: 'CV, Pitch, Interview',
@@ -180,9 +180,9 @@ const config = {
     },
     {
       id: 7,
-      name: 'Hardware Engineer',
-      thumbnail: '/img/projects/project-02.jpg',
-      category: 'Apple',
+      position: 'Hardware Engineer',
+      thumbnail: '/img/company/project-02.jpg',
+      company: 'Apple',
       release_date: '07/28/2018',
       author: 'Emlen Giacobo',
       type: 'CV',
@@ -190,9 +190,9 @@ const config = {
     },
     {
       id: 8,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-02.jpg',
-      category: 'Apple',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-02.jpg',
+      company: 'Apple',
       release_date: '11/29/2018',
       author: 'Vonnie Poytheras',
       type: 'Phone Interview',
@@ -200,9 +200,9 @@ const config = {
     },
     {
       id: 9,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-02.jpg',
-      category: 'Apple',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-02.jpg',
+      company: 'Apple',
       release_date: '03/14/2018',
       author: 'Stacie Ledes',
       type: 'CV, Pitch, Interview',
@@ -210,9 +210,9 @@ const config = {
     },
     {
       id: 10,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-02.jpg',
-      category: 'Apple',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-02.jpg',
+      company: 'Apple',
       release_date: '10/04/2018',
       author: 'Thedrick Scading',
       type: 'CV, Pitch, Interview',
@@ -220,9 +220,9 @@ const config = {
     },
     {
       id: 11,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-03.jpg',
-      category: 'Microsoft',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-03.jpg',
+      company: 'Microsoft',
       release_date: '06/09/2018',
       author: 'Fredek Undrill',
       type: 'CV, Pitch, Interview',
@@ -230,9 +230,9 @@ const config = {
     },
     {
       id: 12,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-03.jpg',
-      category: 'Microsoft',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-03.jpg',
+      company: 'Microsoft',
       release_date: '01/06/2018',
       author: 'Maury Rickeard',
       type: 'CV, Pitch, Interview',
@@ -240,9 +240,9 @@ const config = {
     },
     {
       id: 13,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-03.jpg',
-      category: 'Microsoft',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-03.jpg',
+      company: 'Microsoft',
       release_date: '04/23/2018',
       author: 'Lindsy Fennessy',
       type: 'CV, Pitch, Interview',
@@ -250,9 +250,9 @@ const config = {
     },
     {
       id: 14,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-03.jpg',
-      category: 'Microsoft',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-03.jpg',
+      company: 'Microsoft',
       release_date: '03/20/2018',
       author: 'Vitia Cancellieri',
       type: 'Pitch, Interview',
@@ -260,9 +260,9 @@ const config = {
     },
     {
       id: 15,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-03.jpg',
-      category: 'Microsoft',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-03.jpg',
+      company: 'Microsoft',
       release_date: '01/08/2018',
       author: 'Glad Casarini',
       type: 'CV, Pitch, Interview',
@@ -270,9 +270,9 @@ const config = {
     },
     {
       id: 16,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-03.jpg',
-      category: 'Microsoft',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-03.jpg',
+      company: 'Microsoft',
       release_date: '01/19/2018',
       author: 'Georgeanne Raatz',
       type: 'CV, Pitch, Interview',
@@ -280,9 +280,9 @@ const config = {
     },
     {
       id: 17,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-03.jpg',
-      category: 'Microsoft',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-03.jpg',
+      company: 'Microsoft',
       release_date: '08/10/2018',
       author: 'Gerrard Kemer',
       type: 'CV, Pitch, Interview',
@@ -290,9 +290,9 @@ const config = {
     },
     {
       id: 18,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-04.jpg',
-      category: 'Amazon',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-04.jpg',
+      company: 'Amazon',
       release_date: '05/02/2018',
       author: 'Sammy Callander',
       type: 'CV, Pitch, Interview',
@@ -300,9 +300,9 @@ const config = {
     },
     {
       id: 19,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-04.jpg',
-      category: 'Amazon',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-04.jpg',
+      company: 'Amazon',
       release_date: '09/02/2018',
       author: 'Wright Downham',
       type: 'CV, Pitch, Interview',
@@ -310,25 +310,34 @@ const config = {
     },
     {
       id: 20,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-04.jpg',
-      category: 'Amazon',
+      position: 'Software Engineer',
+      thumbnail: '/img/company/project-04.jpg',
+      company: 'Amazon',
       release_date: '09/25/2018',
       author: 'Terrel Jacomb',
       type: 'CV, Pitch, Interview',
       views: '100'
     }
   ],
-  reviewsss: [
+  readReview: [
     {
       id: 1,
-      name: 'Software Engineer',
-      thumbnail: '/img/projects/project-01.jpg',
-      category: 'Google',
-      release_date: '08/12/2018',
-      author: 'Babette Sussans',
-      type: 'CV, Pitch, Interview',
-      views: '100'
+      author: 'James Bond',
+      release_date: '21/10/2018',
+      views: '100',
+      rating: '',
+      company: 'Google',
+      position: 'Software Engineer',
+      experience: '5',
+      university: 'Carnegie Mellon University',
+      leetcode: '',
+      offers: '1',
+      applications: 'Google, Apple, CodeObjects, DJI, SAP',
+      cv: '- Summary, education (projects & roles), skills (as many as possible)- Experience (projects, contributions & roles), honors, activities',
+      pitch: '- Practice with Jennifer- Write down a pitch',
+      interview_preparation: '',
+      technical_questions: '',
+      onsite_interview: ''
     }
   ]
 }

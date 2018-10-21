@@ -35,7 +35,6 @@ const Forget = () => {
           <Grid columns="one" stackable divided padded>
             <Grid.Row centered>
               <Grid.Column width={6}>
-                {/* <h4 id="article-title">Reset Password</h4> */}
                 <h4 id="page-title"><font size="6">Reset Password</font></h4>
                 <p>We can help you reset your password using your email address linked to your account.</p>
                 <Form>
@@ -43,7 +42,7 @@ const Forget = () => {
                     <Form.Input icon="mail" label="" placeholder="Email Address" />
                   </Form.Group>
                   <br />
-                  <Form.Button fluid color="black">Reset Password</Form.Button>
+                  <Form.Button fluid color="blue">Reset Password</Form.Button>
                 </Form>
               </Grid.Column>
             </Grid.Row>
