@@ -49,6 +49,7 @@ const Forget = () => {
           </Grid>
         </Container>
       </Segment>
+      <br /><br /><br /><br /><br /><br /><br /><br />
     </div>
   )
 }

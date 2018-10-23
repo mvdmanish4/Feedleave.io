@@ -111,7 +111,10 @@ class Login extends Component {
                       <Icon name='linkedin' /> LinkedIn
                     </Button>
                   </Form>
-                  <h4 id="article-title"><font size="4">By continuing, you agree to Feedleave's <a href='/terms'>Terms of Service</a>, <a href='/privacy'>Privacy Policy</a>.</font></h4>
+                  <br />
+                  <label>By continuing, you agree to Feedleave's <a href='\terms'>Terms of Service</a>, <a href='\privacy'>Privacy Policy</a></label>
+                  <br />
+                  {/* <h4 id="article-title"><font size="4">By continuing, you agree to Feedleave's <a href='/terms'>Terms of Service</a>, <a href='/privacy'>Privacy Policy</a>.</font></h4> */}
                   <Message floating warning>
                     <Icon name='user' />
                     Not on Feedleave yet?&nbsp;<a href='/signup'>Sign Up</a>.

@@ -33,7 +33,7 @@ const panes = [
     }
   },
   {
-    menuItem: 'ALUMNI & EXPERIENCED STUDENTS',
+    menuItem: 'ALUMNI',
     render: () => {
       return (
         <Tab.Pane attached={false}>

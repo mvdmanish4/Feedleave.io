@@ -23,7 +23,7 @@ const propTypes = {
 }
 
 const options = [
-  { key: 'u1', text: 'Carnegie Mellon University SV', value: 'cmu' },
+  { key: 'u0', text: 'Carnegie Mellon University SV', value: 'cmu' },
   { key: 'u1', text: 'Carnegie Mellon University Pittsburgh', value: 'cmu-pit' },
   { key: 'u2', text: 'Stanford University', value: 'stanford' },
   { key: 'u3', text: 'University of California, Berkeley', value: 'berkeley' },
@@ -153,8 +153,9 @@ class Write extends Component {
           <h3 id="category-title">Write Review</h3>
           <Form>
             <Form.Field required>
-              <label>Profile</label>
-              <Input label='http://linkedin.com/in/' placeholder='name' name='linkedinLink' value={linkedinLink} onChange={this.handleChange} />
+              <label>LinkedIn Profile</label>
+              <Form.Input placeholder='enter the url' name='linkedinLink' value={linkedinLink} onChange={this.handleChange} />
+              {/* <Input label='http://' placeholder='name' name='linkedinLink' value={linkedinLink} onChange={this.handleChange} /> */}
             </Form.Field>
             <Form.Field required>
               <label>Company</label>
@@ -226,21 +227,17 @@ class Write extends Component {
             <br />
             <Form.Field>
               {/* <Checkbox label='I agree to the Terms and Conditions' /> */}
-              <Form.Checkbox inline label='I agree to the Terms and Conditions' required />
+              <Form.Field control={Checkbox} label={<label>I agree to the <a href='\terms'>Terms of Service</a>, <a href='\terms'>Privacy Policy</a></label>} />
             </Form.Field>
           </Form>
           <br />
-          <List horizontal size='large'>
-            <List.Item>
+          <Grid>
+            <Grid.Column>
               <Button type='submit' color="red">Clear</Button>
-            </List.Item>
-            <List.Item>
               <Button type='submit' color="blue">Save</Button>
-            </List.Item>
-            <List.Item>
               <Button type='submit' color="green" onClick={this.handleSubmit}>Submit</Button>
-            </List.Item>
-          </List>
+            </Grid.Column>
+          </Grid>
           {/* <pre>{JSON.stringify({ linkedinLink, company, position, experience, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation }, null, 2)}</pre> */}
           {/* <pre>{JSON.stringify({ submitLinkedinLink, submittedCompany, submittedPosition, submittedExperience, submittedLeetcode, submittedOffers, submittedCv, submittedPitch, submittedInterviewPreparation, submittedTechnicalQuestions, submittedNonTechnicalQuestions, submittedPhoneInterview, submittedOnsiteInterview, submittedAdditionalInformation }, null, 2)}</pre> */}
           <Message success header='Review Published' content="You can edit/delete/publish the review in the profile page" />

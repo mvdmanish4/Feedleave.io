@@ -92,14 +92,14 @@ const config = {
         'Please, write us if you have questions or suggestions.',
       path: '/contact'
     },
-    // terms: {
-    //   component: 'Terms',
-    //   label: 'Terms of Service',
-    //   icon: 'road',
-    //   subTitle:
-    //     'Please, read it carefully.',
-    //   path: '/terms'
-    // },
+    terms: {
+      component: 'Terms',
+      label: 'Terms of Service',
+      icon: 'road',
+      subTitle:
+        'Please, read it carefully.',
+      path: '/terms'
+    },
     login: {
       component: 'Login',
       label: 'Log In',

@@ -100,10 +100,13 @@ class Signup extends Component {
                       <Icon name='linkedin' /> LinkedIn
                     </Button>
                   </Form>
-                  <h4 id="article-title"><font size="4">By continuing, you agree to Feedleave's <a href='/terms'>Terms of Service</a>, <a href='/privacy'>Privacy Policy</a>.</font></h4>
+                  <br />
+                  <label>By continuing, you agree to Feedleave's <a href='\terms'>Terms of Service</a>, <a href='\privacy'>Privacy Policy</a></label>
+                  {/* <h4 id="article-title"><font size="4">By continuing, you agree to Feedleave's <a href='/terms'>Terms of Service</a>, <a href='/privacy'>Privacy Policy</a>.</font></h4> */}
+                  <br />
                   <Message floating warning>
                     <Icon name='user' />
-                    Already signed up?&nbsp;<a href='/login'>Log In</a>&nbsp;.
+                    Already signed up?&nbsp;<a href='/login'>Log In</a>.
                   </Message>
                 </Grid.Column>
               </Grid.Row>
