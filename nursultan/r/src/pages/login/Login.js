@@ -10,7 +10,8 @@ import {
   Form,
   Message,
   Divider,
-  Button
+  Button,
+  Label
 } from 'semantic-ui-react'
 import { auth, db } from './../../firebase/firebase'
 import PropTypes from 'prop-types'
@@ -92,21 +93,29 @@ class Login extends Component {
               <Grid.Row centered>
                 <Grid.Column width={6}>
                   <h4 id="page-title"><font size="6">Sign In</font></h4>
-                  <Form onSubmit={this.onSubmit}>
+                  <Form>
                     <Form.Group widths="equal">
                       <Form.Input value={email} onChange={event => this.setState(updateByPropertyName('email', event.target.value))} icon="mail" label="Email" placeholder="Email Address" />
                     </Form.Group>
                     <Form.Group widths="equal">
                       <Form.Input value={password} onChange={event => this.setState(updateByPropertyName('password', event.target.value))} icon="key" label="Password" type="password" placeholder="minimum 6 characters" />
                     </Form.Group>
-                    { error && <p>{error.message}</p> }
-                    <h4 id="article-title"><font size="4">By continuing, you agree to our Terms of Use and Privacy Policy.</font></h4>
-                    <Form.Button fluid disabled={isInvalid} color="black" type="submit">Log In</Form.Button>
+                    {error && <p>{error.message}</p>}
+                    <p>
+                      <a href='/forget'>Forget your password?</a>
+                    </p>
+                    {/* <Form.Button fluid disabled={isInvalid} color="black" type="submit">Log In</Form.Button> */}
+                    <Button type='submit' fluid disabled={isInvalid} color="black" onClick={this.onSubmit}>Log In</Button>
                     <Divider horizontal>or</Divider>
                     <Button fluid color='linkedin'>
                       <Icon name='linkedin' /> LinkedIn
                     </Button>
                   </Form>
+                  <h4 id="article-title"><font size="4">By continuing, you agree to Feedleave's <a href='/terms'>Terms of Service</a>, <a href='/privacy'>Privacy Policy</a>.</font></h4>
+                  <Message floating warning>
+                    <Icon name='user' />
+                    Not on Feedleave yet?&nbsp;<a href='/signup'>Sign Up</a>.
+                  </Message>
                 </Grid.Column>
               </Grid.Row>
             </Grid>

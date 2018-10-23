@@ -79,27 +79,32 @@ class Signup extends Component {
               <Grid.Row centered>
                 <Grid.Column width={6}>
                   <h4 id="page-title"><font size="6">Sign Up</font></h4>
-                  <Form onSubmit={this.onSubmit}>
+                  <Form>
                     <Form.Group widths="equal">
-                      <Form.Input value={username} onChange={event => this.setState(updateByPropertyName('username', event.target.value))} icon="user" label="Name" placeholder="Name" />
+                      <Form.Input required value={username} onChange={event => this.setState(updateByPropertyName('username', event.target.value))} icon="user" label="Name" placeholder="Name" />
                     </Form.Group>
                     <Form.Group widths="equal">
-                      <Form.Input value={email} onChange={event => this.setState(updateByPropertyName('email', event.target.value))} icon="mail" label="Email" placeholder="Email Address" />
+                      <Form.Input required value={email} onChange={event => this.setState(updateByPropertyName('email', event.target.value))} icon="mail" label="Email" placeholder="Email Address" />
                     </Form.Group>
                     <Form.Group widths="equal">
-                      <Form.Input value={passwordOne} onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))} icon="key" label="Password" type="password" placeholder="minimum 6 characters" />
+                      <Form.Input required value={passwordOne} onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))} icon="key" label="Password" type="password" placeholder="minimum 6 characters" />
                     </Form.Group>
                     <Form.Group widths="equal">
-                      <Form.Input value={passwordTwo} onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))} icon="key" label="Confirm Password" type="password" placeholder="minimum 6 characters" />
+                      <Form.Input required value={passwordTwo} onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))} icon="key" label="Confirm Password" type="password" placeholder="minimum 6 characters" />
                     </Form.Group>
-                    { error && <p>{error.message}</p> }
-                    <h4 id="article-title"><font size="4">By continuing, you agree to our Terms of Use and Privacy Policy.</font></h4>
-                    <Form.Button fluid disabled={isInvalid} color="black" type="submit">Sign Up</Form.Button>
+                    {error && <p>{error.message}</p>}
+                    {/* <Form.Button fluid disabled={isInvalid} color="black" type="submit">Sign Up</Form.Button> */}
+                    <Button type='submit' fluid disabled={isInvalid} color="black" onClick={this.onSubmit}>Sign Up</Button>
                     <Divider horizontal>or</Divider>
                     <Button fluid color='linkedin'>
                       <Icon name='linkedin' /> LinkedIn
                     </Button>
                   </Form>
+                  <h4 id="article-title"><font size="4">By continuing, you agree to Feedleave's <a href='/terms'>Terms of Service</a>, <a href='/privacy'>Privacy Policy</a>.</font></h4>
+                  <Message floating warning>
+                    <Icon name='user' />
+                    Already signed up?&nbsp;<a href='/login'>Log In</a>&nbsp;.
+                  </Message>
                 </Grid.Column>
               </Grid.Row>
             </Grid>

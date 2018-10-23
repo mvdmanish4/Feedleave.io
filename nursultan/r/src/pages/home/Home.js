@@ -55,7 +55,7 @@ class Home extends Component {
                   />
                   <br />
                   <a
-                    href="/login"
+                    href="/write"
                   // target="_blank"
                   >
                     <Button primary size="huge" color="facebook">

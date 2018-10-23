@@ -10,6 +10,7 @@ import Login from '../pages/login/Login'
 import Signup from '../pages/signup/Signup'
 import Forget from '../pages/forget/Forget'
 import Read from '../pages/read/Read'
+import Write from '../pages/write/Write'
 
 const propTypes = {
   path: PropTypes.string,
@@ -48,6 +49,9 @@ class PageRoutes extends React.Component {
         </Route>
         < Route path="/read">
           <Read pageData={activePage} />
+        </Route>
+        < Route path="/write">
+          <Write pageData={activePage} />
         </Route>
       </Switch>
     )

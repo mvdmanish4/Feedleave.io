@@ -171,9 +171,6 @@ PageRoutes.propTypes = propTypes
 export default PageRoutes
 ```
 
-## SEO
-Also, we can use [Favicon Generator](https://realfavicongenerator.net) and update the favicons under root folder.
-
 ## Deployment
 In order to deploy the project on Firebase Hosting, follow these instructions:
 

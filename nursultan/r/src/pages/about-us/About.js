@@ -124,7 +124,7 @@ const About = () => (
         <h3 id="category-title">Product Roadmap</h3>
         <Grid columns={2} stackable verticalAlign="top">
           <Grid.Column>
-            <h4 id="article-title">Product Development Process</h4>
+            <h4 id="article-title">Development Process</h4>
             <div id="article-content">
               <List bulleted>
                 <List.Item>We develop the project under the SEM course.</List.Item>
