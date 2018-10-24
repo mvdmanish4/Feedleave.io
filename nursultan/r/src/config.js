@@ -123,6 +123,14 @@ const config = {
       subTitle:
         'Text',
       path: '/forget'
+    },
+    privacy: {
+      component: 'Privacy',
+      label: 'Privacy',
+      icon: 'road',
+      subTitle:
+        'Text',
+      path: '/privacy'
     }
   },
   reviews: [

@@ -173,7 +173,7 @@ export default PageRoutes
 
 ## Deployment
 In order to deploy the project on Firebase Hosting, follow these instructions:
-
+<!-- https://medium.com/@bensigo/hosting-your-react-app-with-firebase-hosting-add1fa08c214 -->
 1- Make sure that Firebase CLI tools is installed locally.
 
 2- Login to Firebase and create a projects
