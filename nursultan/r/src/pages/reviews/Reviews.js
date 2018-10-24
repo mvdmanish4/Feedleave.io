@@ -5,7 +5,8 @@ import {
   Card,
   Image,
   Divider,
-  Button
+  Button,
+  Icon
 } from 'semantic-ui-react'
 import config from '../../config'
 
@@ -61,10 +62,10 @@ class Reviews extends Component {
             <Card.Header>{project.position}</Card.Header>
           </Card.Content>
           {/* <Card.Content extra>{project.company}</Card.Content> */}
-          <Card.Content extra>{project.type}</Card.Content>
+          <Card.Description extra>{project.type}</Card.Description>
           <Card.Content extra>{project.author}</Card.Content>
           <Card.Content extra>{project.release_date}</Card.Content>
-          <Card.Content extra>{project.views} views</Card.Content>
+          <Card.Content extra><Icon name='eye' />{project.views} views</Card.Content>
         </Card>
       )
     })

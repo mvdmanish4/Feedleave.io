@@ -14,7 +14,9 @@ import {
   Checkbox,
   Form,
   Message,
-  Input
+  Input,
+  Modal,
+  Header
 } from 'semantic-ui-react'
 import config from '../../config'
 
@@ -141,7 +143,8 @@ class Write extends Component {
       submittedNonTechnicalQuestions: '',
       submittedPhoneInterview: '',
       submittedOnsiteInterview: '',
-      submittedAdditionalInformation: ''
+      submittedAdditionalInformation: '',
+      modalOpen: false
     }
   }
   render() {
@@ -240,9 +243,25 @@ class Write extends Component {
           </Grid>
           {/* <pre>{JSON.stringify({ linkedinLink, company, position, experience, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation }, null, 2)}</pre> */}
           {/* <pre>{JSON.stringify({ submitLinkedinLink, submittedCompany, submittedPosition, submittedExperience, submittedLeetcode, submittedOffers, submittedCv, submittedPitch, submittedInterviewPreparation, submittedTechnicalQuestions, submittedNonTechnicalQuestions, submittedPhoneInterview, submittedOnsiteInterview, submittedAdditionalInformation }, null, 2)}</pre> */}
-          <Message success header='Review Published' content="You can edit/delete/publish the review in the profile page" />
-          <Message header='Review Saved' content="You can edit/delete/publish the review in the profile page" />
-          <Message error header='Error' content='Please, fill out all required fields.' />
+          {/* <Message hidden success header='Review Published' content="You can edit/delete/publish the review in the profile page" /> */}
+          {/* <Message header='Review Saved' content="You can edit/delete/publish the review in the profile page" /> */}
+          {/* <Message hidden error header='Error' content='Please, fill out all required fields.' /> */}
+          <Modal
+            open={this.state.modalOpen}
+            onClose={this.handleClose}
+            basic
+            size='small'
+          >
+            <Header icon='browser' content='Review Published' />
+            <Modal.Content>
+              <h3>You can edit/delete/publish the review in the profile page.</h3>
+            </Modal.Content>
+            <Modal.Actions>
+              <Button color='green' onClick={this.handleClose} inverted>
+                <Icon name='checkmark' /> Got it
+              </Button>
+            </Modal.Actions>
+          </Modal>
         </Container>
       </Segment>
     )
@@ -252,7 +271,10 @@ class Write extends Component {
     const { linkedinLink, company, position, experience, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation } = this.state
 
     this.setState({ submitLinkedinLink: linkedinLink, submittedCompany: company, submittedPosition: position, submittedExperience: experience, submittedLeetcode: leetcode, submittedOffers: offers, submittedCv: cv, submittedPitch: pitch, submittedInterviewPreparation: interviewPreparation, submittedTechnicalQuestions: technicalQuestions, submittedNonTechnicalQuestions: nonTechnicalQuestions, submittedPhoneInterview: phoneInterview, submittedOnsiteInterview: onsiteInterview, submittedAdditionalInformation: additionalInformation })
+
+    this.setState({ modalOpen: true })
   }
+  handleClose = () => this.setState({ modalOpen: false })
 }
 // Write.propTypes = propTypes
 export default Write

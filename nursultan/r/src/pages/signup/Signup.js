@@ -48,7 +48,7 @@ class Signup extends Component {
     auth.createUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState(() => ({ ...INITIAL_STATE }))
-        this.props.history.push('/')
+        this.props.history.push('/write')
       })
       .catch(error => {
         this.setState(updateByPropertyName('error', error))
