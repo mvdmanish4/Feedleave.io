@@ -123,15 +123,15 @@ const config = {
       subTitle:
         'Text',
       path: '/profile'
+    },
+    forget: {
+      component: 'Forget',
+      label: 'Forget',
+      icon: 'help',
+      subTitle:
+        'Text',
+      path: '/forget'
     }
-    // forget: {
-    //   component: 'Forget',
-    //   label: 'Forget',
-    //   icon: 'help',
-    //   subTitle:
-    //     'Text',
-    //   path: '/forget'
-    // }
     // privacy: {
     //   component: 'Privacy',
     //   label: 'Privacy',
