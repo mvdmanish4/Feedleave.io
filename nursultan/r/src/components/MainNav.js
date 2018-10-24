@@ -54,12 +54,13 @@ class MainNav extends Component {
     return (
       <Menu fixed="top" color={'black'} inverted>
         <Container>
-          <Menu.Item as="a" header>
+          {/* <Menu.Item as="a" header> */}
+          <Menu.Item as={NavLink} header link to={'/'}>
             {/* <Image
-              size="mini"
+              size="tiny"
               src={url}
               alt={label}
-              style={{ marginRight: '1.5em' }}
+              // style={{ marginRight: '1.5em' }}
             /> */}
             {/* &nbsp; &nbsp; */}
             {label}

@@ -116,22 +116,30 @@ const config = {
         'Text',
       path: '/signup'
     },
-    forget: {
-      component: 'Forget',
-      label: 'Forget',
-      icon: 'help',
+    profile: {
+      component: 'Profile',
+      label: 'Profile',
+      icon: 'user circle outline',
       subTitle:
         'Text',
-      path: '/forget'
-    },
-    privacy: {
-      component: 'Privacy',
-      label: 'Privacy',
-      icon: 'globe',
-      subTitle:
-        'Text',
-      path: '/privacy'
+      path: '/profile'
     }
+    // forget: {
+    //   component: 'Forget',
+    //   label: 'Forget',
+    //   icon: 'help',
+    //   subTitle:
+    //     'Text',
+    //   path: '/forget'
+    // }
+    // privacy: {
+    //   component: 'Privacy',
+    //   label: 'Privacy',
+    //   icon: 'globe',
+    //   subTitle:
+    //     'Text',
+    //   path: '/privacy'
+    // }
   },
   reviews: [
     {

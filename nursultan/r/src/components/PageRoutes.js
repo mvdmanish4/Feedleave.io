@@ -12,6 +12,7 @@ import Forget from '../pages/forget/Forget'
 import Read from '../pages/read/Read'
 import Write from '../pages/write/Write'
 import Privacy from '../pages/privacy/Privacy'
+import Profile from '../pages/profile/Profile'
 
 const propTypes = {
   path: PropTypes.string,
@@ -56,6 +57,9 @@ class PageRoutes extends React.Component {
         </Route>
         < Route path="/privacy">
           <Privacy pageData={activePage} />
+        </Route>
+        < Route path="/profile">
+          <Profile pageData={activePage} />
         </Route>
       </Switch>
     )

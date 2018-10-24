@@ -114,7 +114,7 @@ class Read extends Component {
                 <Card.Header>Applications (5)</Card.Header>
                 <Card.Meta>names of companies</Card.Meta>
                 <Card.Description>
-                  Google, Apple, CodeObjects, DJI, SAP
+                  <Label color='blue' >Google</Label><Label color='blue' >Apple</Label><Label color='blue' >CodeObjects</Label><Label color='blue' >SAP</Label>
                 </Card.Description>
               </Card.Content>
             </Card>
