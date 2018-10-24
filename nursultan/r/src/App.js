@@ -33,9 +33,10 @@ class App extends Component {
           <Sidebar
             as={Menu}
             animation="overlay"
-            width="thin"
+            // width="thin"
             visible={visible}
-            icon="labeled"
+            // icon="labeled"
+            direction="right"
             onClick={this.toggleVisibility}
             vertical
             inverted

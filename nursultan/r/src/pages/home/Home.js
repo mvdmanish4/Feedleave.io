@@ -31,11 +31,11 @@ class Home extends Component {
                   <Image
                     src="img/home/internship.jpg"
                     alt="feedleave"
-                    width="90%"
-                    height="90%"
+                    width="100%"
+                    height="100%"
                   />
                 </Grid.Column>
-                <Grid.Column width={8} textAlign="left">
+                <Grid.Column width={8} textAlign="center">
                   <Grid.Column verticalAlign="middle">
                     {/* <Image
                       src="/img/atomic-128.png"

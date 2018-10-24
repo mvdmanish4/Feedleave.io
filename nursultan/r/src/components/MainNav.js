@@ -52,7 +52,7 @@ class MainNav extends Component {
 
   renderMobileMenu = (url, label, toggleVisibility) => {
     return (
-      <Menu fixed="top" color={'blue'} inverted>
+      <Menu fixed="top" color={'black'} inverted>
         <Container>
           <Menu.Item as="a" header>
             {/* <Image

@@ -47,7 +47,7 @@ const config = {
     reviews: {
       component: 'Reviews',
       label: 'Reviews',
-      icon: 'bullseye',
+      icon: 'book',
       subTitle:
         'Find reviews and suggestions about internship in Silicon Valley.',
       path: '/reviews'
@@ -55,7 +55,7 @@ const config = {
     read: {
       component: 'Read',
       label: 'Read',
-      icon: 'road',
+      icon: 'file',
       subTitle:
         'Text',
       path: '/read'
@@ -71,7 +71,7 @@ const config = {
     about: {
       component: 'About',
       label: 'About Us',
-      icon: 'building',
+      icon: 'address card',
       subTitle:
         'Text.',
       path: '/about'
@@ -79,7 +79,7 @@ const config = {
     // help: {
     //   component: 'Help',
     //   label: 'Help',
-    //   icon: 'lab',
+    //   icon: 'info',
     //   subTitle:
     //     'Text.',
     //   path: '/help'
@@ -95,7 +95,7 @@ const config = {
     terms: {
       component: 'Terms',
       label: 'Terms of Service',
-      icon: 'road',
+      icon: 'certificate',
       subTitle:
         'Please, read it carefully.',
       path: '/terms'
@@ -103,7 +103,7 @@ const config = {
     login: {
       component: 'Login',
       label: 'Log In',
-      icon: 'road',
+      icon: 'user',
       subTitle:
         'Text',
       path: '/login'
@@ -111,7 +111,7 @@ const config = {
     signup: {
       component: 'Signup',
       label: 'Sign Up',
-      icon: 'road',
+      icon: 'user circle',
       subTitle:
         'Text',
       path: '/signup'
@@ -119,7 +119,7 @@ const config = {
     forget: {
       component: 'Forget',
       label: 'Forget',
-      icon: 'road',
+      icon: 'help',
       subTitle:
         'Text',
       path: '/forget'
@@ -127,7 +127,7 @@ const config = {
     privacy: {
       component: 'Privacy',
       label: 'Privacy',
-      icon: 'road',
+      icon: 'globe',
       subTitle:
         'Text',
       path: '/privacy'
