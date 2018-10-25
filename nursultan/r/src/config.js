@@ -76,14 +76,14 @@ const config = {
         'Text.',
       path: '/about'
     },
-    // help: {
-    //   component: 'Help',
-    //   label: 'Help',
-    //   icon: 'info',
-    //   subTitle:
-    //     'Text.',
-    //   path: '/help'
-    // },
+    help: {
+      component: 'Help',
+      label: 'Help',
+      icon: 'info',
+      subTitle:
+        'Text.',
+      path: '/help'
+    },
     contactus: {
       component: 'ContactUs',
       label: 'Contact Us',
@@ -131,15 +131,15 @@ const config = {
       subTitle:
         'Text',
       path: '/forget'
+    },
+    privacy: {
+      component: 'Privacy',
+      label: 'Privacy',
+      icon: 'globe',
+      subTitle:
+        'Text',
+      path: '/privacy'
     }
-    // privacy: {
-    //   component: 'Privacy',
-    //   label: 'Privacy',
-    //   icon: 'globe',
-    //   subTitle:
-    //     'Text',
-    //   path: '/privacy'
-    // }
   },
   reviews: [
     {

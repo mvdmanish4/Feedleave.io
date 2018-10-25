@@ -1,14 +1,31 @@
 import React, { Component } from 'react'
-import { Menu, Container, Image, Grid, Input } from 'semantic-ui-react'
+import { Menu, Container, Image, Grid, Input, Dropdown, Icon } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
+import {
+  // BrowserRouter as Router,
+  // Route,
+  // Link,
+  // Redirect,
+  withRouter
+} from 'react-router-dom'
 
 const propTypes = {
   subpages: PropTypes.object.isRequired,
   siteLabel: PropTypes.string.isRequired,
   siteLogoUrl: PropTypes.string.isRequired,
-  toggleVisibility: PropTypes.func.isRequired
+  toggleVisibility: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
 }
+const options = [
+  { key: 1, text: 'My Profile', value: 1, icon: 'settings' },
+  { key: 2, text: 'Log Out', value: 2, icon: 'sign out' }
+]
+const trigger = (
+  <span>
+    <Icon name='user' /> Username
+  </span>
+)
 class MainNav extends Component {
   renderMenuItems = subpages => {
     const menuItems = Object.keys(subpages).map(page => {
@@ -26,7 +43,7 @@ class MainNav extends Component {
     return menuItems
   }
 
-  renderDesktopMenu = (url, label, subpages) => {
+  renderDesktopMenu = (url, label, subpages, value) => {
     const menuItems = this.renderMenuItems(subpages)
     return (
       <Menu fixed="top" color={'blue'} pointing secondary>
@@ -44,7 +61,29 @@ class MainNav extends Component {
           <Menu.Item>
             <Input icon='search' placeholder='Search...' />
           </Menu.Item>
-          <Menu.Menu position="right">{menuItems}</Menu.Menu>
+          <Menu.Menu position="right">{menuItems[0]}</Menu.Menu>
+          <Menu.Menu position="right">{menuItems[1]}</Menu.Menu>
+          <Menu.Menu position="right">{menuItems[2]}</Menu.Menu>
+          {/* <Menu.Menu position="right">{menuItems[3]}</Menu.Menu> */}
+          {/* <Menu.Menu position="right">{menuItems[4]}</Menu.Menu> */}
+          {/* <Menu.Menu position="right">{menuItems[5]}</Menu.Menu> */}
+          {/* <Menu.Menu position="right">{menuItems[6]}</Menu.Menu> */}
+          <Menu.Menu position="right">{menuItems[7]}</Menu.Menu>
+          <Menu.Menu position="right">{menuItems[8]}</Menu.Menu>
+          {/* <Menu.Menu position="right">{menuItems[9]}</Menu.Menu> */}
+          {/* <Menu.Menu position="right">{menuItems[10]}</Menu.Menu> */}
+          {/* <Menu.Menu position="right">{menuItems[11]}</Menu.Menu> */}
+          {/* <Menu.Item
+            link
+            key={pages.reviews.label}
+            name={pages.reviews.path}
+            as={NavLink}
+            exact
+            to={pages.reviews.path}
+          /> */}
+          <Menu.Menu position='right'>
+            <Dropdown item trigger={trigger} direction='right' value={value} options={options} onChange={this.handleChange} icon={null} />
+          </Menu.Menu>
         </Container>
       </Menu>
     )
@@ -96,7 +135,18 @@ class MainNav extends Component {
       </Grid>
     )
   }
+  // handleChange = (e, { value }) => this.setState({ [name]: value })
+  handleChange = (e, { value }) => {
+    if (value === 1) {
+      // console.log({value})
+      this.props.history.push('/profile')
+    } else if (value === 2) {
+      // this.props.history.push('/profile')
+      // auth.signOut()
+    }
+  }
 }
 
 MainNav.propTypes = propTypes
-export default MainNav
+// export default MainNav
+export default withRouter(MainNav)
