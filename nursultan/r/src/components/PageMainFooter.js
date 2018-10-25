@@ -5,7 +5,9 @@ import {
   Grid,
   Image,
   Segment,
-  Icon
+  Icon,
+  Header,
+  List
 } from 'semantic-ui-react'
 
 const propTypes = {
@@ -32,44 +34,32 @@ const PageMainFooter = props => {
     })
   }
   return (
-    <Segment
-      inverted
-      vertical
-      style={{ margin: '5em 0em 0em', padding: '5em 0em' }}
-    >
+    <Segment inverted vertical color={'white'} style={{ padding: '5em 0em' }}>
       <Container textAlign="center">
-        <Grid inverted stackable>
-          {/* <Grid.Row verticalAlign="top">
-            <Grid.Column computer={1} tablet={2} mobile={16} align="center">
-              <Image
-                id="footer-logo"
-                src={siteLogoUrl}
-                alt={siteLabel}
-              />
-            </Grid.Column>
-            <Grid.Column computer={6} tablet={6} mobile={16} id="footer-message">{message}</Grid.Column>
-            <Grid.Column computer={9} tablet={8} mobile={16} id="footer-contact-links">
-              <Grid.Row style={{marginBottom: 10}}>
-                <Grid.Column>CALL. <strong>{phone}</strong></Grid.Column>
-              </Grid.Row>
-              <Grid.Row style={{marginBottom: 10}}>
-                <Grid.Column>EMAIL. <a href={`mailto:${email}`}>{email}</a></Grid.Column>
-              </Grid.Row>
-              <Grid.Row style={{marginBottom: 10}}>
-                <Grid.Column>
-                  {renderSocialMediaLinks(socialMediaLinks)}
-                </Grid.Column>
-              </Grid.Row>
-            </Grid.Column>
-          </Grid.Row> */}
-          <Grid.Row>
-            <Grid.Column width={16}>
-              {copyrightYear} © {siteLabel}
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+        <List horizontal inverted divided link verticalAlign="middle">
+          <List.Item as='a' href='#'>
+            {copyrightYear} © {siteLabel}
+          </List.Item>
+          <List.Item as='a' href='\terms'>
+            Terms of Service
+          </List.Item>
+          <List.Item as='a' href='\privacy'>
+            Privacy Policy
+          </List.Item>
+          <List.Item as='a' href='\help'>
+            Help
+          </List.Item>
+          <List.Item as='a' href='\about'>
+            About
+          </List.Item>
+          <List.Item as='a' href='\contact'>
+            Contact Us
+          </List.Item>
+        </List>
       </Container>
     </Segment>
+    //         <Grid.Column width={16}>
+    //           {copyrightYear} © {siteLabel}
   )
 }
 

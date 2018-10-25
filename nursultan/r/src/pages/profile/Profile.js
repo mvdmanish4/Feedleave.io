@@ -39,11 +39,11 @@ class Profile extends Component {
                   </Form.Field>
                   <Form.Field>
                     <label>Password</label>
-                    <Form.Input placeholder='james@bond.com' icon="key" />
+                    <Form.Input placeholder='password' icon="key" />
                   </Form.Field>
                   <Form.Field>
                     <label>Confirm Password</label>
-                    <Form.Input placeholder='james@bond.com' icon="key" />
+                    <Form.Input placeholder='password' icon="key" />
                   </Form.Field>
                 </Form>
               </Grid.Column>

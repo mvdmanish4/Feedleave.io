@@ -3,7 +3,7 @@ const config = {
   homepage: 'http://www.feedleave.io',
   email: 'help@feedleave.io',
   phone: '(888) 888 88 88',
-  siteLabel: 'feedleave',
+  siteLabel: 'FEEDLEAVE',
   siteLogoUrl: 'img/general/Slice.png',
   // react-rapid-logo-512.png
   footer: {

@@ -104,16 +104,29 @@ class Home extends Component {
         <Segment
           inverted
           vertical
-          style={{ margin: '5em 0em 0em', padding: '5em 0em' }}
+          style={{ margin: '1.5em 0em 0em', padding: '1.5em 0em' }}
         >
           <Container textAlign="center">
-            <Grid inverted stackable>
-              <Grid.Row>
-                <Grid.Column width={16}>
-                  {copyrightYear} © {siteLabel}
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
+            <List horizontal inverted divided link verticalAlign="middle">
+              <List.Item as='a' href='#'>
+                {copyrightYear} © {siteLabel}
+              </List.Item>
+              <List.Item as='a' href='\terms'>
+                Terms of Service
+              </List.Item>
+              <List.Item as='a' href='\privacy'>
+                Privacy Policy
+              </List.Item>
+              <List.Item as='a' href='\help'>
+                Help
+              </List.Item>
+              <List.Item as='a' href='\about'>
+                About
+              </List.Item>
+              <List.Item as='a' href='\contact'>
+                Contact Us
+              </List.Item>
+            </List>
           </Container>
         </Segment>
       </div>

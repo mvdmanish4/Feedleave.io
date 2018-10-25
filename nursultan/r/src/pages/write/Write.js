@@ -19,6 +19,9 @@ import {
   Header
 } from 'semantic-ui-react'
 import config from '../../config'
+import { auth, db } from './../../firebase/firebase'
+// import db from './../../Config/firebase'
+
 
 const propTypes = {
   // pageData: PropTypes.object.isRequired
@@ -144,9 +147,30 @@ class Write extends Component {
       submittedPhoneInterview: '',
       submittedOnsiteInterview: '',
       submittedAdditionalInformation: '',
-      modalOpen: false
+      modalOpen: false,
+      publishReview: false
+      // items: {}
     }
   }
+  componentWillMount() {
+    this.itemsRef.on('value', data => {
+      this.setState({
+        items: data.val()
+      })
+    })
+  }
+  componentWillUnmount() {
+    fire.removeBinding(this.itemsRef)
+  }
+  // onSave(e) {
+  //   e.preventDefault()
+  //   this.itemsRef.push({
+  //     item: trim(e.target.value)
+  //   })
+  //   this.setState({
+  //     item: ''
+  //   })
+  // }
   render() {
     const {
       linkedinLink, company, position, experience, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, submitLinkedinLink, submittedCompany, submittedPosition, submittedExperience, submittedLeetcode, submittedOffers, submittedCv, submittedPitch, submittedInterviewPreparation, submittedTechnicalQuestions, submittedNonTechnicalQuestions, submittedPhoneInterview, submittedOnsiteInterview, submittedAdditionalInformation } = this.state
@@ -237,7 +261,7 @@ class Write extends Component {
           <Grid>
             <Grid.Column>
               <Button type='submit' color="red">Clear</Button>
-              <Button type='submit' color="blue">Save</Button>
+              <Button type='submit' color="blue" onClick={this.handleSave}>Save</Button>
               <Button type='submit' color="green" onClick={this.handleSubmit}>Submit</Button>
             </Grid.Column>
           </Grid>
@@ -266,12 +290,72 @@ class Write extends Component {
       </Segment>
     )
   }
+  itemsRef = db.ref('items')
+  completeItem = (id) => {
+    this.itemsRef.update({
+      [id]: {
+        ...this.state.items[id],
+        completed: true
+      }
+    })
+  }
+  deleteItem = (id) => {
+    this.itemsRef.update({
+      [id]: null
+    })
+  }
+  addItem = (e) => {
+    e.preventDefault()
+    this.itemsRef.push({
+      item: this.todoItem.value,
+      completed: false
+    })
+  }
+  handleSave = () => {
+    const { linkedinLink, company, position, experience, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation } = this.state
+    this.itemsRef.push({
+      linkedinLink, company, position, experience, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: false
+    })
+    this.setState({
+      linkedinLink: '',
+      company: '',
+      position: '',
+      experience: '',
+      leetcode: '',
+      offers: '',
+      cv: '',
+      pitch: '',
+      interviewPreparation: '',
+      technicalQuestions: '',
+      nonTechnicalQuestions: '',
+      phoneInterview: '',
+      onsiteInterview: '',
+      additionalInformation: ''
+    })
+  }
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
   handleSubmit = () => {
     const { linkedinLink, company, position, experience, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation } = this.state
-
-    this.setState({ submitLinkedinLink: linkedinLink, submittedCompany: company, submittedPosition: position, submittedExperience: experience, submittedLeetcode: leetcode, submittedOffers: offers, submittedCv: cv, submittedPitch: pitch, submittedInterviewPreparation: interviewPreparation, submittedTechnicalQuestions: technicalQuestions, submittedNonTechnicalQuestions: nonTechnicalQuestions, submittedPhoneInterview: phoneInterview, submittedOnsiteInterview: onsiteInterview, submittedAdditionalInformation: additionalInformation })
-
+    this.itemsRef.push({
+      linkedinLink, company, position, experience, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true
+    })
+    // this.setState({ submitLinkedinLink: linkedinLink, submittedCompany: company, submittedPosition: position, submittedExperience: experience, submittedLeetcode: leetcode, submittedOffers: offers, submittedCv: cv, submittedPitch: pitch, submittedInterviewPreparation: interviewPreparation, submittedTechnicalQuestions: technicalQuestions, submittedNonTechnicalQuestions: nonTechnicalQuestions, submittedPhoneInterview: phoneInterview, submittedOnsiteInterview: onsiteInterview, submittedAdditionalInformation: additionalInformation })
+    this.setState({
+      linkedinLink: '',
+      company: '',
+      position: '',
+      experience: '',
+      leetcode: '',
+      offers: '',
+      cv: '',
+      pitch: '',
+      interviewPreparation: '',
+      technicalQuestions: '',
+      nonTechnicalQuestions: '',
+      phoneInterview: '',
+      onsiteInterview: '',
+      additionalInformation: ''
+    })
     this.setState({ modalOpen: true })
   }
   handleClose = () => this.setState({ modalOpen: false })
