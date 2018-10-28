@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import './Home.css'
 import {
   Button,
   Container,
@@ -102,12 +103,11 @@ class Home extends Component {
         </Segment> */}
 
         <Segment
-          inverted
           vertical
           style={{ margin: '1.5em 0em 0em', padding: '1.5em 0em' }}
         >
           <Container textAlign="center">
-            <List horizontal inverted divided link verticalAlign="middle">
+            <List horizontal divided link verticalAlign="middle">
               <List.Item as='a' href='#'>
                 {copyrightYear} © {siteLabel}
               </List.Item>

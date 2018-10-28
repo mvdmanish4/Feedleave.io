@@ -1,0 +1,6 @@
+.item {
+  color: #0e6eb8
+}
+.ui.link.list > a.item{
+  color: #0e6eb8;
+}
