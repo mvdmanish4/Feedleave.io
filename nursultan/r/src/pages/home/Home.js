@@ -22,8 +22,8 @@ class Home extends Component {
     const { siteLabel, footer } = this.props
     const { copyrightYear } = footer
     return (
-      <div>
-        <Segment inverted textAlign="center" id="page-header-home" vertical>
+      <div >
+        <Segment style={{ height: '90vh' }} inverted textAlign="center" id="page-header-home" vertical>
           <Container>
             <Grid stackable textAlign="center" verticalAlign="middle">
               <Grid.Row>
