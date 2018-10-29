@@ -19,7 +19,7 @@ import {
   Header
 } from 'semantic-ui-react'
 import config from '../../config'
-import { auth, db } from './../../firebase/firebase'
+import { db } from './../../firebase/firebase'
 
 const propTypes = {
   // pageData: PropTypes.object.isRequired

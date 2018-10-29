@@ -33,6 +33,7 @@
     "react-dev-utils": "^4.2.1",
     "react-dom": "^16.0.0",
     "react-linkedin-sdk": "^1.0.12",
+    "react-redux": "^5.1.0",
     "react-router-dom": "^4.2.2",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",

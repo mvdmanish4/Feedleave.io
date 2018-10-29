@@ -13,9 +13,12 @@ import {
   List
 } from 'semantic-ui-react'
 import config from '../../config'
+import { db } from './../../firebase/firebase'
+// import Reviews from '../reviews/Reviews'
 
 const propTypes = {
-  // pageData: PropTypes.object.isRequired
+  // data: PropTypes.object.isRequired,
+  // text1: PropTypes.string
 }
 // const readReview = this.countProjects(config.read_review)
 
@@ -25,11 +28,43 @@ class Read extends Component {
     this.state = {
       rating: 0,
       maxRating: 5
+      // text1: ''
     }
   }
-  onRate = (e, { rating, maxRating }) => this.setState({ rating, maxRating })
   // let results = [...projects]
+  componentWillMount() {
+    this.itemsRef.on('value', data => {
+      const allData = data.val()
+      console.log(allData)
+      const key1 = Object.keys(data.val())[0]
+      console.log(key1)
 
+      // console.log(allData.key.prevChildKey)
+      // console.log(data.child('cv'))
+      // this.setState({usercount: data.val()});
+      // this.setState({
+      //   getItems: data.val()
+      // })
+      this.itemsRef.orderByKey().on('child_added', function(snapshot) {
+        console.log(snapshot.key)
+      })
+
+
+      this.itemsRef.orderByChild('cv').on('child_added', function(snapshot) {
+        console.log(snapshot.val().additionalInformation)
+      })
+
+
+      // starCountRef = db.ref('  items/' + key1)
+      db.ref('items/' + key1).on('value', function(snapshot) {
+        console.log(snapshot.val().position)
+      })
+      // console.log(getItems.position)
+      // console.log(this.props.data.initialState)
+      // console.log(this.props.text1.text1)
+    })
+  }
+  onRate = (e, { rating, maxRating }) => this.setState({ rating, maxRating })
   render() {
     return (
       <Segment basic>
@@ -185,6 +220,16 @@ class Read extends Component {
       </Segment>
     )
   }
+  itemsRef = db.ref('items')
+  // this.itemsRef.on('value', function(snapshot) {
+  // console.log(snapshot.val())
+  // _this.setState({
+  //   posts: snapshot.val(),
+  //   loading: false
+  //   });
+  //   });
+  // }
+  // }
 }
 Read.propTypes = propTypes
 export default Read

@@ -150,7 +150,22 @@ const config = {
       release_date: '08/12/2018',
       author: 'Babette Sussans',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '100',
+      rating: '',
+      experience: '5',
+      university: 'Carnegie Mellon University',
+      leetcode: '150-200',
+      offers: 'Google, Apple, CodeObjects, DJI, SAP',
+      cv: '- Summary, education (projects & roles), skills (as many as possible)- Experience (projects, contributions & roles), honors, activities',
+      pitch: '- Practice with Jennifer- Write down a pitch',
+      interviewPreparation: '- Prepare for behavior questions- Search common questions online, write down your own answers, review them before any interview- Prepare 1-minute brief description for all the projects or activities on your resume (content, contribution)',
+      technicalQuestions: '- practice algorithms, system design, database- practice coding and explaining at the same time on the board- write code in the google document',
+      nonTechnicalQuestions: '',
+      linkedinLink: '',
+      onsiteInterview: '- Small companies might require you to do the on-site interview instead of the phone interview- Most of the on-site interview including system design problems- database, distributed system, cloud deployment',
+      additionalInformation: '',
+      phoneInterview: '',
+      keyName: '-LPgxqToXAILox7O0jtE'
     },
     {
       id: 2,
@@ -311,59 +326,59 @@ const config = {
       author: 'Gerrard Kemer',
       type: 'CV, Pitch, Interview',
       views: '100'
-    },
-    {
-      id: 18,
-      position: 'Software Engineer',
-      thumbnail: '/img/company/project-04.jpg',
-      company: 'Amazon',
-      release_date: '05/02/2018',
-      author: 'Sammy Callander',
-      type: 'CV, Pitch, Interview',
-      views: '100'
-    },
-    {
-      id: 19,
-      position: 'Software Engineer',
-      thumbnail: '/img/company/project-04.jpg',
-      company: 'Amazon',
-      release_date: '09/02/2018',
-      author: 'Wright Downham',
-      type: 'CV, Pitch, Interview',
-      views: '100'
-    },
-    {
-      id: 20,
-      position: 'Software Engineer',
-      thumbnail: '/img/company/project-04.jpg',
-      company: 'Amazon',
-      release_date: '09/25/2018',
-      author: 'Terrel Jacomb',
-      type: 'CV, Pitch, Interview',
-      views: '100'
     }
-  ],
-  readReview: [
-    {
-      id: 1,
-      author: 'James Bond',
-      release_date: '21/10/2018',
-      views: '100',
-      rating: '',
-      company: 'Google',
-      position: 'Software Engineer',
-      experience: '5',
-      university: 'Carnegie Mellon University',
-      leetcode: '',
-      offers: '1',
-      applications: 'Google, Apple, CodeObjects, DJI, SAP',
-      cv: '- Summary, education (projects & roles), skills (as many as possible)- Experience (projects, contributions & roles), honors, activities',
-      pitch: '- Practice with Jennifer- Write down a pitch',
-      interview_preparation: '',
-      technical_questions: '',
-      onsite_interview: ''
-    }
+    // {
+    //   id: 18,
+    //   position: 'Software Engineer',
+    //   thumbnail: '/img/company/project-04.jpg',
+    //   company: 'Amazon',
+    //   release_date: '05/02/2018',
+    //   author: 'Sammy Callander',
+    //   type: 'CV, Pitch, Interview',
+    //   views: '100'
+    // },
+    // {
+    //   id: 19,
+    //   position: 'Software Engineer',
+    //   thumbnail: '/img/company/project-04.jpg',
+    //   company: 'Amazon',
+    //   release_date: '09/02/2018',
+    //   author: 'Wright Downham',
+    //   type: 'CV, Pitch, Interview',
+    //   views: '100'
+    // },
+    // {
+    //   id: 20,
+    //   position: 'Software Engineer',
+    //   thumbnail: '/img/company/project-04.jpg',
+    //   company: 'Amazon',
+    //   release_date: '09/25/2018',
+    //   author: 'Terrel Jacomb',
+    //   type: 'CV, Pitch, Interview',
+    //   views: '100'
+    // }
   ]
+  // readReview: [
+  //   {
+  //     id: 1,
+  //     author: 'James Bond',
+  //     release_date: '21/10/2018',
+  //     views: '100',
+  //     rating: '',
+  //     company: 'Google',
+  //     position: 'Software Engineer',
+  //     experience: '5',
+  //     university: 'Carnegie Mellon University',
+  //     leetcode: '',
+  //     offers: '1',
+  //     applications: 'Google, Apple, CodeObjects, DJI, SAP',
+  //     cv: '- Summary, education (projects & roles), skills (as many as possible)- Experience (projects, contributions & roles), honors, activities',
+  //     pitch: '- Practice with Jennifer- Write down a pitch',
+  //     interview_preparation: '',
+  //     technical_questions: '',
+  //     onsite_interview: ''
+  //   }
+  // ]
 }
 
 

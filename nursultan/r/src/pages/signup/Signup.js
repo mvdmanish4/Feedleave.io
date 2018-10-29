@@ -12,9 +12,6 @@ import {
 import { auth, db } from './../../firebase/firebase'
 import PropTypes from 'prop-types'
 import {
-  // BrowserRouter as Router,
-  // Route,
-  // Redirect,
   Link,
   withRouter
 } from 'react-router-dom'
@@ -118,5 +115,4 @@ class Signup extends Component {
   }
 }
 
-// export default Signup
 export default withRouter(Signup)

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {
   Segment,
   Container,
@@ -9,11 +10,20 @@ import {
   Icon
 } from 'semantic-ui-react'
 import config from '../../config'
+import {
+  Link,
+  withRouter
+} from 'react-router-dom'
+import Read from '../read/Read'
+const propTypes = {
+  // keyName: PropTypes.object.isRequired
+}
 
 class Reviews extends Component {
   constructor(props) {
     super(props)
     this.state = { selectedCompany: 'All' }
+    // this.state = { text1: '222' }
   }
 
   renderReviewsHeader = () => {
@@ -23,7 +33,7 @@ class Reviews extends Component {
     const deActiveColor = 'linkedin'
     const result = Object.keys(reviews).map(company => {
       const buttonColor =
-      company === selectedCompany ? activeColor : deActiveColor
+        company === selectedCompany ? activeColor : deActiveColor
       return (
         <Button
           key={company}
@@ -82,15 +92,20 @@ class Reviews extends Component {
     return (
       <div>
         <Segment basic>
-          <Container textAlign="center">
-            <Button.Group size="large" toggle vertical={isButtonGroupVertical}>
+          <Container textAlign="center">{/* <Button.Group size="large" toggle vertical={isButtonGroupVertical}> */}
+            <Button.Group size="large" toggle>
               {this.renderReviewsHeader()}
             </Button.Group>
             {/* <Divider /> */}
             <br /><br />
-            <Card.Group textAlign="center" itemsPerRow="5" stackable>
-              {this.renderReviews(selectedCompany, reviews)}
-            </Card.Group>
+            <Link to="/read">
+              {/* {this.props.keyName('333')} */}
+              {/* <Read text1={{ text1: 'Welcome to React' }}/> */}
+              {/* <Read text1={this.state.text1}/> */}
+              <Card.Group textAlign="center" itemsPerRow="5" stackable>
+                {this.renderReviews(selectedCompany, reviews)}
+              </Card.Group>
+            </Link>
           </Container>
         </Segment>
       </div>
@@ -116,4 +131,6 @@ class Reviews extends Component {
   }
 }
 
-export default Reviews
+// export default Reviews
+Reviews.propTypes = propTypes
+export default withRouter(Reviews)

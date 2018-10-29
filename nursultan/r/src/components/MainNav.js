@@ -58,7 +58,7 @@ class MainNav extends Component {
             <Input icon='search' placeholder='Search...' />
           </Menu.Item>
           <Menu.Menu position="right">{menuItems[0]}</Menu.Menu>
-          <Menu.Menu position="right">{menuItems[1]}</Menu.Menu>
+          {/* <Menu.Menu position="right">{menuItems[1]}</Menu.Menu> */}
           <Menu.Menu position="right">{menuItems[2]}</Menu.Menu>
           {/* <Menu.Menu position="right">{menuItems[3]}</Menu.Menu> */}
           {/* <Menu.Menu position="right">{menuItems[4]}</Menu.Menu> */}
