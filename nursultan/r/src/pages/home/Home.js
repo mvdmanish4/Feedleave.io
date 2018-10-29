@@ -12,6 +12,14 @@ import {
   Segment,
   Statistic
 } from 'semantic-ui-react'
+import PageMainFooter from './../../components/PageMainFooter'
+import {
+  // BrowserRouter as Router,
+  // Route,
+  // Redirect,
+  Link,
+  withRouter
+} from 'react-router-dom'
 
 const propTypes = {
   footer: PropTypes.object,
@@ -19,12 +27,15 @@ const propTypes = {
 }
 
 class Home extends Component {
+  static propTypes = {
+    history: PropTypes.object.isRequired
+  }
   render() {
     const { siteLabel, footer } = this.props
     const { copyrightYear } = footer
     return (
-      <div >
-        <Segment style={{ height: '90vh' }} inverted textAlign="center" id="page-header-home" vertical>
+      <div>
+        <Segment inverted textAlign="center" id="page-header-home" vertical>
           <Container>
             <Grid stackable textAlign="center" verticalAlign="middle">
               <Grid.Row>
@@ -55,15 +66,15 @@ class Home extends Component {
                     inverted
                   />
                   <br />
-                  <a
+                  {/* <a
                     href="/login"
                   // target="_blank"
-                  >
-                    <Button primary size="huge" color="facebook">
-                      <Icon name="write" />
-                      Write Review
-                    </Button>
-                  </a>
+                  > */}
+                  <Button primary size="huge" color="facebook" onClick={this.handleClick} >
+                    <Icon name="write" />
+                    Write Review
+                  </Button>
+                  {/* </a> */}
                 </Grid.Column>
               </Grid.Row>
             </Grid>
@@ -101,37 +112,45 @@ class Home extends Component {
             <br />
           </Grid>
         </Segment> */}
-
-        <Segment
+        <PageMainFooter
+          siteLabel={siteLabel}
+          copyrightYear={copyrightYear}
+        />
+        {/* <Segment
+          inverted
           vertical
           style={{ margin: '1.5em 0em 0em', padding: '1.5em 0em' }}
         >
           <Container textAlign="center">
-            <List horizontal divided link verticalAlign="middle">
-              <List.Item as='a' href='#'>
-                {copyrightYear} © {siteLabel}
+            <List horizontal inverted divided link verticalAlign="middle">
+              <List.Item>
+                <Link to="/">{copyrightYear} © {siteLabel}</Link>
               </List.Item>
-              <List.Item as='a' href='\terms'>
-                Terms of Service
+              <List.Item>
+                <Link to="/terms">Terms of Service</Link>
               </List.Item>
-              <List.Item as='a' href='\privacy'>
-                Privacy Policy
+              <List.Item>
+                <Link to="/privacy">Privacy Policy</Link>
               </List.Item>
-              <List.Item as='a' href='\help'>
-                Help
+              <List.Item>
+                <Link to="/help">Help</Link>
               </List.Item>
-              <List.Item as='a' href='\about'>
-                About
+              <List.Item>
+                <Link to="/about">About</Link>
               </List.Item>
-              <List.Item as='a' href='\contact'>
-                Contact Us
+              <List.Item>
+                <Link to="/contact">Contact Us</Link>
               </List.Item>
             </List>
           </Container>
-        </Segment>
+        </Segment> */}
       </div>
     )
   }
+  handleClick = () => {
+    this.props.history.push('/login')
+  }
 }
 Home.propTypes = propTypes
-export default Home
+// export default Home
+export default withRouter(Home)

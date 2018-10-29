@@ -18,8 +18,8 @@ import PropTypes from 'prop-types'
 import {
   // BrowserRouter as Router,
   // Route,
-  // Link,
   // Redirect,
+  Link,
   withRouter
 } from 'react-router-dom'
 
@@ -87,7 +87,7 @@ class Login extends Component {
 
     return (
       <div>
-        <Segment basic>
+        <Segment basic style={{ padding: '0em 0em 12em' }}>
           <Container>
             <Grid columns="three" stackable divided padded>
               <Grid.Row centered>
@@ -112,12 +112,12 @@ class Login extends Component {
                     </Button>
                   </Form>
                   <br />
-                  <label>By continuing, you agree to Feedleave's <a href='\terms'>Terms of Service</a>, <a href='\privacy'>Privacy Policy</a></label>
+                  <label>By continuing, you agree to Feedleave's <Link to="/terms">Terms of Service</Link>, <Link to="/privacy">Privacy Policy</Link></label>
                   <br />
                   {/* <h4 id="article-title"><font size="4">By continuing, you agree to Feedleave's <a href='/terms'>Terms of Service</a>, <a href='/privacy'>Privacy Policy</a>.</font></h4> */}
                   <Message floating warning>
                     <Icon name='user' />
-                    Not on Feedleave yet?&nbsp;<a href='/signup'>Sign Up</a>.
+                    Not on Feedleave yet?&nbsp;<Link to="/signup">Sign Up</Link>
                   </Message>
                 </Grid.Column>
               </Grid.Row>

@@ -14,17 +14,20 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html {
+/* html {
   color: #222;
   font-size: 1em;
+  position: relative;
+  height: 100%; 
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-family: 'Roboto', sans-serif;
-}
+} */
 
-body {
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1em;
@@ -139,7 +142,7 @@ font-family: 'Roboto', sans-serif;
 .capitalize {
   text-transform: capitalize;
 }
-
+/* qwe */
 #page-header-home {
   background-image: url('/img/general/background.jpg');
   background-attachment: fixed;
@@ -148,8 +151,9 @@ font-family: 'Roboto', sans-serif;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  padding-top: 160px;
-  padding-bottom: 160px;
+  padding-top: 110px;
+  padding-bottom: 355px;
+  /* min-height: calc(100% - 60px); */
 }
 
 #page-header-segment {

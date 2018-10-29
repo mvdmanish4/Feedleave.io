@@ -146,7 +146,7 @@ const About = () => (
         </Grid>
       </Container>
     </Segment>
-    <Segment basic>
+    <Segment basic style={{ padding: '0em 0em 6em' }}>
       <Container>
         <h3 id="category-title">Statistics</h3>
         {/* <Divider /> */}
@@ -174,7 +174,6 @@ const About = () => (
             </Statistic.Value>
             <Statistic.Label>users</Statistic.Label>
           </Statistic>
-
           {/* <Statistic>
             <Statistic.Value>
               <Icon name="heart" style={{ color: 'red' }} />

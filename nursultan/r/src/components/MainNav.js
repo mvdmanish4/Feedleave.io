@@ -3,10 +3,6 @@ import { Menu, Container, Image, Grid, Input, Dropdown, Icon } from 'semantic-ui
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import {
-  // BrowserRouter as Router,
-  // Route,
-  // Link,
-  // Redirect,
   withRouter
 } from 'react-router-dom'
 

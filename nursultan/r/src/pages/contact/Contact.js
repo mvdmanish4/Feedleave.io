@@ -36,7 +36,7 @@ const Contact = () => {
 
   return (
     <div>
-      <Segment basic>
+      <Segment basic style={{ padding: '0em 0em 27em' }}>
         <Container>
           <Grid columns="three" stackable divided padded>
             <h4 id="page-title"><font size="6">Contact Us</font></h4>

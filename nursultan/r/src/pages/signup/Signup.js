@@ -14,8 +14,8 @@ import PropTypes from 'prop-types'
 import {
   // BrowserRouter as Router,
   // Route,
-  // Link,
   // Redirect,
+  Link,
   withRouter
 } from 'react-router-dom'
 const updateByPropertyName = (propertyName, value) => () => ({
@@ -73,7 +73,7 @@ class Signup extends Component {
 
     return (
       <div>
-        <Segment basic>
+        <Segment basic style={{ padding: '0em 0em 4em' }}>
           <Container>
             <Grid columns="one" stackable divided padded>
               <Grid.Row centered>
@@ -101,12 +101,12 @@ class Signup extends Component {
                     </Button>
                   </Form>
                   <br />
-                  <label>By continuing, you agree to Feedleave's <a href='\terms'>Terms of Service</a>, <a href='\privacy'>Privacy Policy</a></label>
+                  <label>By continuing, you agree to Feedleave's <Link to="/terms">Terms of Service</Link>, <Link to="/privacy">Privacy Policy</Link></label>
                   {/* <h4 id="article-title"><font size="4">By continuing, you agree to Feedleave's <a href='/terms'>Terms of Service</a>, <a href='/privacy'>Privacy Policy</a>.</font></h4> */}
                   <br />
                   <Message floating warning>
                     <Icon name='user' />
-                    Already signed up?&nbsp;<a href='/login'>Log In</a>.
+                    Already signed up?&nbsp;<Link to="/login">Log In</Link>.
                   </Message>
                 </Grid.Column>
               </Grid.Row>

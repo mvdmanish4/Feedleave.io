@@ -11,7 +11,7 @@ const propTypes = {
   pageData: PropTypes.object.isRequired
 }
 const Help = () => (
-  <Segment basic>
+  <Segment basic style={{ padding: '0em 0em 25em' }}>
     <Container>
       {/* <h4 id="category-title">User Guide</h4> */}
       <h4 id="page-title"><font size="6">User Guide</font></h4>

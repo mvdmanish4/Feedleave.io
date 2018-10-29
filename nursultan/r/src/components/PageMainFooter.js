@@ -9,6 +9,10 @@ import {
   Header,
   List
 } from 'semantic-ui-react'
+import {
+  Link,
+  withRouter
+} from 'react-router-dom'
 
 const propTypes = {
   siteLabel: PropTypes.string.isRequired,
@@ -17,7 +21,8 @@ const propTypes = {
   message: PropTypes.string.isRequired,
   email: PropTypes.string,
   phone: PropTypes.string,
-  socialMediaLinks: PropTypes.array
+  socialMediaLinks: PropTypes.array,
+  history: PropTypes.object.isRequired
 }
 
 const PageMainFooter = props => {
@@ -34,26 +39,27 @@ const PageMainFooter = props => {
     })
   }
   return (
-    <Segment inverted vertical color={'white'} style={{ padding: '5em 0em' }}>
+    // padding: '5em 0em'
+    <Segment inverted vertical color={'white'} style={{ }}>
       <Container textAlign="center">
         <List horizontal inverted divided link verticalAlign="middle">
-          <List.Item as='a' href='#'>
-            {copyrightYear} © {siteLabel}
+          <List.Item>
+            <Link to="/">{copyrightYear} © {siteLabel}</Link>
           </List.Item>
-          <List.Item as='a' href='\terms'>
-            Terms of Service
+          <List.Item>
+            <Link to="/terms">Terms of Service</Link>
           </List.Item>
-          <List.Item as='a' href='\privacy'>
-            Privacy Policy
+          <List.Item>
+            <Link to="/privacy">Privacy Policy</Link>
           </List.Item>
-          <List.Item as='a' href='\help'>
-            Help
+          <List.Item>
+            <Link to="/help">Help</Link>
           </List.Item>
-          <List.Item as='a' href='\about'>
-            About
+          <List.Item>
+            <Link to="/about">About</Link>
           </List.Item>
-          <List.Item as='a' href='\contact'>
-            Contact Us
+          <List.Item>
+            <Link to="/contact">Contact Us</Link>
           </List.Item>
         </List>
       </Container>
@@ -64,4 +70,5 @@ const PageMainFooter = props => {
 }
 
 PageMainFooter.propTypes = propTypes
-export default PageMainFooter
+// export default PageMainFooter
+export default withRouter(PageMainFooter)

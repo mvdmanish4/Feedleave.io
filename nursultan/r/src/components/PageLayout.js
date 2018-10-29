@@ -32,7 +32,7 @@ class PageLayout extends React.Component {
         <br /><br /><br />
         <PageRoutes path={path} activePage={activePage} />
         <PageMainFooter
-          subpages={pages}
+          // subpages={pages}
           siteLabel={siteLabel}
           siteLogoUrl={siteLogoUrl}
           siteLabel={siteLabel}
