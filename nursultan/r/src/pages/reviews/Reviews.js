@@ -22,46 +22,24 @@ const propTypes = {
 class Reviews extends Component {
   constructor(props) {
     super(props)
-    this.state = { selectedCompany: 'All' }
+    this.state = { selectedView: 'All' }
     // this.state = { text1: '222' }
   }
 
-  renderReviewsHeader = () => {
-    const reviews = this.countReviews(config.reviews)
-    const { selectedCompany } = this.state
-    const activeColor = 'pink'
-    const deActiveColor = 'linkedin'
-    const result = Object.keys(reviews).map(company => {
-      const buttonColor =
-        company === selectedCompany ? activeColor : deActiveColor
-      return (
-        <Button
-          key={company}
-          onClick={this.handleReviewsSelect}
-          color={buttonColor}
-        >
-          {company}
-        </Button>
-      )
-    })
-
-    result.unshift(
-      <Button
-        key={'All'}
-        color={selectedCompany === 'All' ? activeColor : deActiveColor}
-        onClick={this.handleReviewsSelect}
-      >
-        All
-      </Button>
-    )
-    return result
-  }
-
   renderReviews = (company, reviews) => {
-    let results = [...reviews]
-    if (this.state.selectedCompany !== 'All') {
-      results = reviews.filter(project => {
-        return project.company === company
+    const results = [...reviews]
+    console.log(results)
+    if (this.state.selectedView === 'Popular') {
+      results.sort(function(a, b) {
+        if (Number(a.views) > Number(b.views)) {
+          return -1
+        }
+        return 1
+      })
+    }
+    if (this.state.selectedView === 'New') {
+      results.sort(function(a, b) {
+        return new Date(b.release_date) - new Date(a.release_date)
       })
     }
     return results.map(project => {
@@ -82,7 +60,7 @@ class Reviews extends Component {
   }
 
   render() {
-    const { selectedCompany } = this.state
+    const { selectedView } = this.state
     const { reviews } = config
     const browserSize = {
       width: window.innerWidth || document.body.clientWidth,
@@ -94,7 +72,27 @@ class Reviews extends Component {
         <Segment basic>
           <Container textAlign="center">{/* <Button.Group size="large" toggle vertical={isButtonGroupVertical}> */}
             <Button.Group size="large" toggle>
-              {this.renderReviewsHeader()}
+              <Button
+                key={'All'}
+                onClick={this.handleReviewsSelect}
+                color={this.state.selectedView === 'All' ? 'pink' : 'linkedin'}
+              >
+                All
+              </Button>
+              <Button
+                key={'Popular'}
+                onClick={this.handleReviewsSelect}
+                color={this.state.selectedView === 'Popular' ? 'pink' : 'linkedin'}
+              >
+                Popular
+              </Button>
+              <Button
+                key={'New'}
+                onClick={this.handleReviewsSelect}
+                color={this.state.selectedView === 'New' ? 'pink' : 'linkedin'}
+              >
+                New
+              </Button>
             </Button.Group>
             {/* <Divider /> */}
             <br /><br />
@@ -103,7 +101,7 @@ class Reviews extends Component {
               {/* <Read text1={{ text1: 'Welcome to React' }}/> */}
               {/* <Read text1={this.state.text1}/> */}
               <Card.Group textAlign="center" itemsPerRow="5" stackable>
-                {this.renderReviews(selectedCompany, reviews)}
+                {this.renderReviews(selectedView, reviews)}
               </Card.Group>
             </Link>
           </Container>
@@ -113,7 +111,7 @@ class Reviews extends Component {
   }
 
   handleReviewsSelect = (event, data) => {
-    this.setState({ selectedCompany: data.children })
+    this.setState({ selectedView: data.children })
   }
 
   countReviews = reviews => {

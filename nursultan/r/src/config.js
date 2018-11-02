@@ -175,7 +175,7 @@ const config = {
       release_date: '01/01/2018',
       author: 'Budd Pray',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '99'
     },
     {
       id: 3,
@@ -185,7 +185,7 @@ const config = {
       release_date: '09/20/2018',
       author: 'Jennee Ales',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '98'
     },
     {
       id: 4,
@@ -195,7 +195,7 @@ const config = {
       release_date: '05/02/2018',
       author: 'Linea Piaggia',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '97'
     },
     {
       id: 5,
@@ -205,7 +205,7 @@ const config = {
       release_date: '06/24/2018',
       author: 'Marwin Hernik',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '96'
     },
     {
       id: 6,
@@ -215,7 +215,7 @@ const config = {
       release_date: '04/30/2018',
       author: 'Herculie Scone',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '93'
     },
     {
       id: 7,
@@ -225,7 +225,7 @@ const config = {
       release_date: '07/28/2018',
       author: 'Emlen Giacobo',
       type: 'CV',
-      views: '100'
+      views: '87'
     },
     {
       id: 8,
@@ -235,7 +235,7 @@ const config = {
       release_date: '11/29/2018',
       author: 'Vonnie Poytheras',
       type: 'Phone Interview',
-      views: '100'
+      views: '88'
     },
     {
       id: 9,
@@ -245,7 +245,7 @@ const config = {
       release_date: '03/14/2018',
       author: 'Stacie Ledes',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '90'
     },
     {
       id: 10,
@@ -255,7 +255,7 @@ const config = {
       release_date: '10/04/2018',
       author: 'Thedrick Scading',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '79'
     },
     {
       id: 11,
@@ -265,7 +265,7 @@ const config = {
       release_date: '06/09/2018',
       author: 'Fredek Undrill',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '109'
     },
     {
       id: 12,
@@ -275,7 +275,7 @@ const config = {
       release_date: '01/06/2018',
       author: 'Maury Rickeard',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '102'
     },
     {
       id: 13,
@@ -285,7 +285,7 @@ const config = {
       release_date: '04/23/2018',
       author: 'Lindsy Fennessy',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '103'
     },
     {
       id: 14,
@@ -295,7 +295,7 @@ const config = {
       release_date: '03/20/2018',
       author: 'Vitia Cancellieri',
       type: 'Pitch, Interview',
-      views: '100'
+      views: '118'
     },
     {
       id: 15,
@@ -305,7 +305,7 @@ const config = {
       release_date: '01/08/2018',
       author: 'Glad Casarini',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '122'
     },
     {
       id: 16,
@@ -315,7 +315,7 @@ const config = {
       release_date: '01/19/2018',
       author: 'Georgeanne Raatz',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '115'
     },
     {
       id: 17,
@@ -325,7 +325,7 @@ const config = {
       release_date: '08/10/2018',
       author: 'Gerrard Kemer',
       type: 'CV, Pitch, Interview',
-      views: '100'
+      views: '112'
     }
     // {
     //   id: 18,
