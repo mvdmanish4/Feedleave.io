@@ -46,7 +46,7 @@ class MainNav extends Component {
 
   renderDesktopMenu = (url, label, subpages, value) => {
     const menuItems = this.renderMenuItems(subpages)
-    console.log(menuItems)
+    // console.log(menuItems)
     const trigger = (
       <span>
         <Icon name='user' /> { this.state.email ? this.state.email : 'Username' }
@@ -190,7 +190,7 @@ class MainNav extends Component {
     this.fireBaseListener = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         // User is signed in.
-        console.log('logged in')
+        // console.log('logged in')
         this.setState({
           loggedIn: true,
           displayName: user.displayName,
@@ -206,7 +206,7 @@ class MainNav extends Component {
         // User is signed out.
         // ...
         this.setState({ loggedIn: false })
-        console.log('logged out')
+        // console.log('logged out')
       }
     })
   }

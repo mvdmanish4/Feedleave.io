@@ -28,7 +28,7 @@ class Reviews extends Component {
 
   renderReviews = (company, reviews) => {
     const results = [...reviews]
-    console.log(results)
+    // console.log(results)
     if (this.state.selectedView === 'Popular') {
       results.sort(function(a, b) {
         if (Number(a.views) > Number(b.views)) {
