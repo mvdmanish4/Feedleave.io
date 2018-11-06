@@ -21,7 +21,11 @@ const propTypes = {
   // text1: PropTypes.string
 }
 // const readReview = this.countProjects(config.read_review)
-
+function getLastFromList(ref, cb) {
+  ref.limit(1).once('child_added', function(snapshot) {
+    cb(snapshot.val())
+  })
+}
 class Read extends Component {
   constructor(props) {
     super(props)
@@ -37,8 +41,22 @@ class Read extends Component {
       const allData = data.val()
       console.log(allData)
       const key1 = Object.keys(data.val())[0]
+      console.log('----------------------')
       console.log(key1)
-
+      console.log('----------------------')
+      // const key2 = Object.keys(data.val()).limitToLast(1)
+      // itemsRef = db.ref('items')
+      // console.log(itemsRef.orderByKey().limitToLast(1))
+      // getLastFromList(this.itemsRef, function(val) {
+      // console.log(val)
+      // })
+      // this.itemsRef.limit(1).once('child_added', function(snapshot) {
+      //   console.log(snapshot.val())
+      // })
+      this.itemsRef.orderByKey().limitToLast(1).on('child_added', function(snapshot) {
+        console.log('poslerd: ' + snapshot.key)
+      })
+      console.log('----------------------')
       // console.log(allData.key.prevChildKey)
       // console.log(data.child('cv'))
       // this.setState({usercount: data.val()});
@@ -48,17 +66,18 @@ class Read extends Component {
       this.itemsRef.orderByKey().on('child_added', function(snapshot) {
         console.log(snapshot.key)
       })
-
+      console.log('----------------------')
 
       this.itemsRef.orderByChild('cv').on('child_added', function(snapshot) {
         console.log(snapshot.val().additionalInformation)
       })
-
+      console.log('----------------------')
 
       // starCountRef = db.ref('  items/' + key1)
       db.ref('items/' + key1).on('value', function(snapshot) {
         console.log(snapshot.val().position)
       })
+      console.log('----------------------')
       // console.log(getItems.position)
       // console.log(this.props.data.initialState)
       // console.log(this.props.text1.text1)

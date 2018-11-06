@@ -6,6 +6,7 @@ import firebase from 'firebase/app'
 import {
   withRouter
 } from 'react-router-dom'
+import { auth, db } from './../firebase/firebase'
 
 const propTypes = {
   subpages: PropTypes.object.isRequired,
@@ -216,8 +217,8 @@ class MainNav extends Component {
       // console.log({value})
       this.props.history.push('/profile')
     } else if (value === 2) {
-      // this.props.history.push('/profile')
-      // auth.signOut()
+      this.props.history.push('/')
+      auth.signOut()
     }
   }
 }

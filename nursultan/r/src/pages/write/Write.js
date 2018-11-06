@@ -18,7 +18,7 @@ import {
   Modal,
   Header
 } from 'semantic-ui-react'
-import config from '../../config'
+// import config from '../../config'
 import { db } from './../../firebase/firebase'
 
 const propTypes = {
@@ -145,11 +145,25 @@ const INITIAL_STATE = {
   modalOpen: false,
   publishReview: false
 }
+
+
 class Write extends Component {
   constructor(props) {
     super(props)
     this.state = {
     }
+    this.znachenie = 'ss'
+  }
+  componentWillMount() {
+    this.itemsRef.on('value', data => {
+      this.itemsRef.orderByKey().limitToLast(1).on('child_added', function(snapshot) {
+        // this.znachenie = snapshot.key
+        // this.setState({
+        //   znachenie: snapshot.key
+        // })
+        console.log('posled: ' + snapshot.key)
+      })
+    })
   }
   // componentWillMount() {
   //   this.itemsRef.on('value', data => {
@@ -280,7 +294,7 @@ class Write extends Component {
       </Segment>
     )
   }
-  itemsRef = db.ref('items')
+  itemsRef = db.ref('items/')
   // completeItem = (id) => {
   //   this.itemsRef.update({
   //     [id]: {
@@ -319,8 +333,9 @@ class Write extends Component {
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
   handleSubmit = () => {
     const { linkedinLink, company, position, experience, value, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation } = this.state
-    this.itemsRef.push({
-      linkedinLink, company, position, experience, value, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true
+    this.itemsRef.update({
+      // linkedinLink, company, position, experience, value, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true
+      additionalInformation
     })
     // this.setState({ submitLinkedinLink: linkedinLink, submittedCompany: company, submittedPosition: position, submittedExperience: experience, submittedLeetcode: leetcode, submittedOffers: offers, submittedCv: cv, submittedPitch: pitch, submittedInterviewPreparation: interviewPreparation, submittedTechnicalQuestions: technicalQuestions, submittedNonTechnicalQuestions: nonTechnicalQuestions, submittedPhoneInterview: phoneInterview, submittedOnsiteInterview: onsiteInterview, submittedAdditionalInformation: additionalInformation })
     this.setState({

@@ -46,6 +46,9 @@ class Signup extends Component {
       .then(authUser => {
         this.setState(() => ({ ...INITIAL_STATE }))
         this.props.history.push('/write')
+        this.itemsRef.push({
+          username
+        })
       })
       .catch(error => {
         this.setState(updateByPropertyName('error', error))
@@ -113,6 +116,7 @@ class Signup extends Component {
       </div>
     )
   }
+  itemsRef = db.ref('items')
 }
 
 export default withRouter(Signup)
