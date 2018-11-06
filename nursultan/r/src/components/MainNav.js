@@ -131,9 +131,9 @@ class MainNav extends Component {
             exact
             to={pages.reviews.path}
           /> */}
-          <Menu.Menu position='right'>
+          {/* <Menu.Menu position='right'>
             <Dropdown item trigger={trigger} direction='right' value={value} options={options} onChange={this.handleChange} icon={null} />
-          </Menu.Menu>
+          </Menu.Menu> */}
         </Container>
       </Menu>
     )
