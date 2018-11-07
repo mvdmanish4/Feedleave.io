@@ -41,9 +41,9 @@ class Read extends Component {
     this.itemsRef.on('value', data => {
       const allData = data.val()
       console.log(allData)
-      const key1 = Object.keys(data.val())[0]
-      console.log('----------------------')
-      console.log(key1)
+      // const key1 = Object.keys(data.val())[0]
+      // console.log('----------------------')
+      // console.log(key1)
       console.log('----------------------')
       // const key2 = Object.keys(data.val()).limitToLast(1)
       // itemsRef = db.ref('items')
@@ -75,9 +75,9 @@ class Read extends Component {
       console.log('----------------------')
 
       // starCountRef = db.ref('  items/' + key1)
-      db.ref('items/' + key1).on('value', function(snapshot) {
-        console.log(snapshot.val().position)
-      })
+      // db.ref('items/' + key1).on('value', function(snapshot) {
+      // console.log(snapshot.val().position)
+      // })
       console.log('----------------------')
       // console.log(getItems.position)
       // console.log(this.props.data.initialState)
@@ -248,7 +248,7 @@ class Read extends Component {
       </Segment>
     )
   }
-  itemsRef = db.ref('items')
+  itemsRef = db.ref('reviews')
   // this.itemsRef.on('value', function(snapshot) {
   // console.log(snapshot.val())
   // _this.setState({

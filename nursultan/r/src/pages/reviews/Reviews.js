@@ -15,6 +15,7 @@ import {
   withRouter
 } from 'react-router-dom'
 import Read from '../read/Read'
+import { db } from './../../firebase/firebase'
 const propTypes = {
   // keyName: PropTypes.object.isRequired
 }
@@ -22,13 +23,68 @@ const propTypes = {
 class Reviews extends Component {
   constructor(props) {
     super(props)
-    this.state = { selectedView: 'All' }
+    this.state = { selectedView: 'Company', listingData: []}
     // this.state = { text1: '222' }
   }
+  componentWillMount() {
+    this.itemsRef.on('value', data => {
+      // this.setState({ allData: data.val() })
+      const allData = data.val()
+      console.log(allData)
+      const key1 = Object.keys(data.val())[0]
+      console.log('----------------------')
+      console.log(key1)
+      console.log('----------------------')
+      // const key2 = Object.keys(data.val()).limitToLast(1)
+      // itemsRef = db.ref('items')
+      // console.log(itemsRef.orderByKey().limitToLast(1))
+      // getLastFromList(this.itemsRef, function(val) {
+      // console.log(val)
+      // })
+      // this.itemsRef.limit(1).once('child_added', function(snapshot) {
+      //   console.log(snapshot.val())
+      // })
+      this.itemsRef.orderByKey().limitToLast(1).on('child_added', function(snapshot) {
+        console.log('poslerd: ' + snapshot.key)
+      })
+      console.log('----------------------')
+      // console.log(allData.key.prevChildKey)
+      // console.log(data.child('cv'))
+      // this.setState({usercount: data.val()});
+      // this.setState({
+      //   getItems: data.val()
+      // })
+      this.itemsRef.orderByKey().on('child_added', function(snapshot) {
+        console.log(snapshot.key)
+      })
+      console.log('----------------------')
 
+      this.itemsRef.orderByChild('cv').on('child_added', function(snapshot) {
+        console.log(snapshot.val().additionalInformation)
+      })
+      console.log('----------------------')
+
+      // starCountRef = db.ref('reviews/' + key1)
+      db.ref('reviews/' + key1).on('value', function(snapshot) {
+        console.log(snapshot.val().position)
+      })
+      console.log('----------------------')
+      // console.log(getItems.position)
+      // console.log(this.props.data.initialState)
+      // console.log(this.props.text1.text1)
+
+      db.ref('users').once('value').then(snapshot =>
+        this.setState({ users: snapshot.val() })
+      )
+      console.log(this.users)
+      // db.ref('users').on('value', function(snapshot) {
+      //   this.setState({ users: snapshot.val() })
+      // })
+    })
+  }
   renderReviews = (company, reviews) => {
     const results = [...reviews]
-    // console.log(results)
+    console.log(results)
     if (this.state.selectedView === 'Popular') {
       results.sort(function(a, b) {
         if (Number(a.views) > Number(b.views)) {
@@ -44,8 +100,9 @@ class Reviews extends Component {
     }
     return results.map(project => {
       return (
-        <Card color="olive" key={project.id}>
-          <Image src={project.thumbnail} />
+        <Card color="olive">
+          {/* key={project.id} */}
+          {/* <Image src={project.thumbnail} /> */}
           <Card.Content>
             <Card.Header>{project.position}</Card.Header>
           </Card.Content>
@@ -62,6 +119,10 @@ class Reviews extends Component {
   render() {
     const { selectedView } = this.state
     const { reviews } = config
+    // db.ref('reviews').on('value', data => {
+    //   reviews = data.val()
+    // })
+    console.log(reviews)
     const browserSize = {
       width: window.innerWidth || document.body.clientWidth,
       height: window.innerHeight || document.body.clientHeight
@@ -71,13 +132,14 @@ class Reviews extends Component {
       <div>
         <Segment basic>
           <Container textAlign="center">{/* <Button.Group size="large" toggle vertical={isButtonGroupVertical}> */}
+            <p>Sort by:</p>
             <Button.Group size="large" toggle>
               <Button
-                key={'All'}
+                key={'Company'}
                 onClick={this.handleReviewsSelect}
-                color={this.state.selectedView === 'All' ? 'pink' : 'linkedin'}
+                color={this.state.selectedView === 'Company' ? 'pink' : 'linkedin'}
               >
-                All
+                Company
               </Button>
               <Button
                 key={'Popular'}
@@ -109,24 +171,24 @@ class Reviews extends Component {
       </div>
     )
   }
-
+  itemsRef = db.ref('reviews')
   handleReviewsSelect = (event, data) => {
     this.setState({ selectedView: data.children })
   }
 
-  countReviews = reviews => {
-    const results = {}
-    for (let i = 0; i < reviews.length; i++) {
-      const project = reviews[i]
-      const { company } = project
-      if (results[company] === undefined) {
-        results[company] = 1
-      } else {
-        results[company] += 1
-      }
-    }
-    return results
-  }
+  // countReviews = reviews => {
+  //   const results = {}
+  //   for (let i = 0; i < reviews.length; i++) {
+  //     const project = reviews[i]
+  //     const { company } = project
+  //     if (results[company] === undefined) {
+  //       results[company] = 1
+  //     } else {
+  //       results[company] += 1
+  //     }
+  //   }
+  //   return results
+  // }
 }
 
 // export default Reviews
