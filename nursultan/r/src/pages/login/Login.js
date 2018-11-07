@@ -66,7 +66,7 @@ class Login extends Component {
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }))
         // history.push(routes.HOME)
-        this.props.history.push('/write')
+        this.props.history.push('/')
       })
       .catch(error => {
         this.setState(updateByPropertyName('error', error))

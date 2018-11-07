@@ -44,11 +44,19 @@ class Signup extends Component {
     } = this.state
     auth.createUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
-        this.setState(() => ({ ...INITIAL_STATE }))
-        this.props.history.push('/write')
-        this.itemsRef.push({
-          username
+        db.ref(`users/${authUser.user.uid}`).set({
+          username,
+          email
         })
+        // db.doCreateUser(authUser.user.uid, username, email)
+        //   .catch(error => {
+        //     this.setState(byPropKey('error', error))
+        //   })
+        this.setState(() => ({ ...INITIAL_STATE }))
+        this.props.history.push('/')
+        // this.itemsRef.push({
+        //   username
+        // })
       })
       .catch(error => {
         this.setState(updateByPropertyName('error', error))

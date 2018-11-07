@@ -148,7 +148,7 @@ class Home extends Component {
     )
   }
   handleClick = () => {
-    this.props.history.push('/login')
+    this.props.history.push('/write')
   }
 }
 Home.propTypes = propTypes

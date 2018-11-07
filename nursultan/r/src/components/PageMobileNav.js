@@ -77,12 +77,12 @@ class PageMobileNav extends Component {
         <Menu.Item link key={'signup'} name={'signup'} as={NavLink} exact to={'/signup'}>
           <Icon name={'user circle'} src={'/signup'} /> Sign Up
         </Menu.Item>
-        <Menu.Item link key={'profile'} name={'profile'} as={NavLink} exact to={'/profile'}>
+        {/* <Menu.Item link key={'profile'} name={'profile'} as={NavLink} exact to={'/profile'}>
           <Icon name={'settings'} src={'/profile'} /> My Profile
         </Menu.Item>
         <Menu.Item link key={'signout'} name={'signout'} as={NavLink} exact to={'/signout'}>
           <Icon name={'sign out'} src={'/signout'} /> Sign Out
-        </Menu.Item>
+        </Menu.Item> */}
       </div>
     )
   }

@@ -19,7 +19,7 @@ import {
   Header
 } from 'semantic-ui-react'
 // import config from '../../config'
-import { db } from './../../firebase/firebase'
+import { auth, db } from './../../firebase/firebase'
 
 const propTypes = {
   // pageData: PropTypes.object.isRequired
@@ -120,6 +120,7 @@ const INITIAL_STATE = {
   value: '',
   leetcode: '',
   offers: '',
+  applications: '',
   cv: '',
   pitch: '',
   interviewPreparation: '',
@@ -177,7 +178,7 @@ class Write extends Component {
   // }
   render() {
     const {
-      linkedinLink, company, position, experience, value, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, submitLinkedinLink, submittedCompany, submittedPosition, submittedExperience, submittedLeetcode, submittedOffers, submittedCv, submittedPitch, submittedInterviewPreparation, submittedTechnicalQuestions, submittedNonTechnicalQuestions, submittedPhoneInterview, submittedOnsiteInterview, submittedAdditionalInformation } = this.state
+      linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, submitLinkedinLink, submittedCompany, submittedPosition, submittedExperience, submittedLeetcode, submittedOffers, submittedCv, submittedPitch, submittedInterviewPreparation, submittedTechnicalQuestions, submittedNonTechnicalQuestions, submittedPhoneInterview, submittedOnsiteInterview, submittedAdditionalInformation } = this.state
     return (
       <Segment basic>
         <Container>
@@ -214,9 +215,10 @@ class Write extends Component {
             <Form.Field required>
               <label>Applications</label>
               {/* <Form.Input placeholder='name of the company applied' /> */}
-              <Input action={{ icon: 'close', color: 'red' }} placeholder='enter company name' />
+              {/* <Input action={{ icon: 'close', color: 'red' }} placeholder='enter company name' /> */}
+              <Form.Input placeholder='enter company name' name='applications' value={applications} onChange={this.handleChange} />
               {/* onClick={this.addInput} */}
-              <p id="article-title"><font size="4">+ Add new </font></p>
+              {/* <p id="article-title"><font size="4">+ Add new </font></p> */}
               {/* <Button icon labelPosition='left' basic color="transparent">
                 <Icon name='plus' />
                 Add new
@@ -294,7 +296,13 @@ class Write extends Component {
       </Segment>
     )
   }
-  itemsRef = db.ref('items/')
+  // `users/${authUser.user.uid}`
+  itemsRef = db.ref('users/' + auth.currentUser.uid)
+  itemsRef2 = db.ref('reviews')
+  // onAuthStateChanged(function(user) {
+  //   if (user) {
+  //   }
+  // })
   // completeItem = (id) => {
   //   this.itemsRef.update({
   //     [id]: {
@@ -321,9 +329,12 @@ class Write extends Component {
     })
   }
   handleSave = () => {
-    const { linkedinLink, company, position, experience, value, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation } = this.state
+    const { linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation } = this.state
     this.itemsRef.push({
-      linkedinLink, company, position, experience, value, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: false
+      linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: false
+    })
+    itemsRef.on('child_added', function(data) {
+      addCommentElement(postElement, data.key, data.val().text, data.val().author)
     })
     this.setState({
       ...INITIAL_STATE
@@ -332,10 +343,14 @@ class Write extends Component {
   handleChangeDropdown = (e, { value }) => this.setState({ value })
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
   handleSubmit = () => {
-    const { linkedinLink, company, position, experience, value, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation } = this.state
-    this.itemsRef.update({
-      // linkedinLink, company, position, experience, value, leetcode, offers, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true
-      additionalInformation
+    const { linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation } = this.state
+    const tempDate = new Date()
+    const releaseDate = tempDate.getDate() + '/' + (tempDate.getMonth() + 1) + '/' + tempDate.getFullYear()
+    this.itemsRef.push({
+      linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true, releaseDate
+    })
+    this.itemsRef2.push({
+      linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true, releaseDate
     })
     // this.setState({ submitLinkedinLink: linkedinLink, submittedCompany: company, submittedPosition: position, submittedExperience: experience, submittedLeetcode: leetcode, submittedOffers: offers, submittedCv: cv, submittedPitch: pitch, submittedInterviewPreparation: interviewPreparation, submittedTechnicalQuestions: technicalQuestions, submittedNonTechnicalQuestions: nonTechnicalQuestions, submittedPhoneInterview: phoneInterview, submittedOnsiteInterview: onsiteInterview, submittedAdditionalInformation: additionalInformation })
     this.setState({

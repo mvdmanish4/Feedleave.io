@@ -31,7 +31,8 @@ class Read extends Component {
     super(props)
     this.state = {
       rating: 0,
-      maxRating: 5
+      maxRating: 5,
+      users: null
       // text1: ''
     }
   }
@@ -81,6 +82,14 @@ class Read extends Component {
       // console.log(getItems.position)
       // console.log(this.props.data.initialState)
       // console.log(this.props.text1.text1)
+
+      db.ref('users').once('value').then(snapshot =>
+        this.setState({ users: snapshot.val() })
+      )
+      console.log(this.users)
+      // db.ref('users').on('value', function(snapshot) {
+      //   this.setState({ users: snapshot.val() })
+      // })
     })
   }
   onRate = (e, { rating, maxRating }) => this.setState({ rating, maxRating })
