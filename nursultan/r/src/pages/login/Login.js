@@ -80,10 +80,7 @@ class Login extends Component {
       // Do we trust the sender of this message?
       if (event.origin !== "http://localhost:5000")
         return;
-    
-      // event.source is window.opener
-      // event.data is "hello there!"
-      
+
       // alert('Hi received message');
       // alert(decodeURIComponent(event.data))
       const script = document.createElement('script')
@@ -91,7 +88,6 @@ class Login extends Component {
       script.async = true
       script.innerHTML = decodeURIComponent(event.data)
       document.body.appendChild(script)
-      // (decodeURIComponent(event.data)).appendTo(document.body);
     }
     //alert('Hi there');
     window.addEventListener("message", receiveMessage, false);`
