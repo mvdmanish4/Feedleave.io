@@ -78,8 +78,8 @@ class Login extends Component {
     function receiveMessage(event)
     {
       // Do we trust the sender of this message?
-      //if (event.origin !== "http://example.com:8080")
-      //  return;
+      if (event.origin !== "http://localhost:5000")
+        return;
     
       // event.source is window.opener
       // event.data is "hello there!"
