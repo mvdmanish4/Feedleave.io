@@ -57,6 +57,44 @@ class Login extends Component {
     this.state = { selectedCategory: 'All' }
     this.state = { ...INITIAL_STATE }
   }
+
+  componentDidMount() {
+    // inserts 3 scripts, and receive encoded javascript string, insert as the 4th script (which does the oauth thing).
+    const script1 = document.createElement('script')
+    const script2 = document.createElement('script')
+    const script3 = document.createElement('script')
+
+    script1.type = 'text/javascript'
+    script1.src = 'https://www.gstatic.com/firebasejs/3.4.0/firebase.js'
+    script2.type = 'text/javascript'
+    script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.min.js'
+
+    document.body.appendChild(script1)
+    document.body.appendChild(script2)
+
+    script3.type = 'text/javascript'
+    // script3.async = true
+    script3.innerHTML = `// Called sometime after postMessage is called
+    function receiveMessage(event)
+    {
+      // Do we trust the sender of this message?
+      if (event.origin !== "http://localhost:5000")
+        return;
+
+      // alert('Hi received message');
+      // alert(decodeURIComponent(event.data))
+      const script = document.createElement('script')
+      script.type = 'text/javascript'
+      script.async = true
+      script.innerHTML = decodeURIComponent(event.data)
+      document.body.appendChild(script)
+    }
+    //alert('Hi there');
+    window.addEventListener("message", receiveMessage, false);`
+
+    document.body.appendChild(script3)
+  }
+
   onSubmit = (event) => {
     const {
       email,
@@ -72,6 +110,11 @@ class Login extends Component {
         this.setState(updateByPropertyName('error', error))
       })
     event.preventDefault()
+  }
+
+  onClickLinkedIn = (event) => {
+    // Open the Auth flow in a popup.
+    window.open('http://localhost:5000/oauth/redirect', 'firebaseAuth', 'height=600,width=800')
   }
 
   render() {
@@ -107,7 +150,7 @@ class Login extends Component {
                     {/* <Form.Button fluid disabled={isInvalid} color="black" type="submit">Log In</Form.Button> */}
                     <Button type='submit' fluid disabled={isInvalid} color="black" onClick={this.onSubmit}>Log In</Button>
                     <Divider horizontal>or</Divider>
-                    <Button fluid color='linkedin'>
+                    <Button fluid color='linkedin' onClick={this.onClickLinkedIn}>
                       <Icon name='linkedin' /> LinkedIn
                     </Button>
                   </Form>
