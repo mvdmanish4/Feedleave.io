@@ -23,66 +23,19 @@ const propTypes = {
 class Reviews extends Component {
   constructor(props) {
     super(props)
-    this.state = { selectedView: 'Company', listingData: []}
-    // this.state = { text1: '222' }
-  }
-  componentWillMount() {
-    this.itemsRef.on('value', data => {
-      // this.setState({ allData: data.val() })
-      const allData = data.val()
-      console.log(allData)
-      const key1 = Object.keys(data.val())[0]
-      console.log('----------------------')
-      console.log(key1)
-      console.log('----------------------')
-      // const key2 = Object.keys(data.val()).limitToLast(1)
-      // itemsRef = db.ref('items')
-      // console.log(itemsRef.orderByKey().limitToLast(1))
-      // getLastFromList(this.itemsRef, function(val) {
-      // console.log(val)
-      // })
-      // this.itemsRef.limit(1).once('child_added', function(snapshot) {
-      //   console.log(snapshot.val())
-      // })
-      this.itemsRef.orderByKey().limitToLast(1).on('child_added', function(snapshot) {
-        console.log('poslerd: ' + snapshot.key)
+    this.state = { selectedView: 'Company', listingData: [], users: []}
+    db.ref('reviews/').on('value', snapshot => {
+      console.log(snapshot.val())
+      const result = Object.keys(snapshot.val()).map(function(key) {
+        return snapshot.val()[key]
       })
-      console.log('----------------------')
-      // console.log(allData.key.prevChildKey)
-      // console.log(data.child('cv'))
-      // this.setState({usercount: data.val()});
-      // this.setState({
-      //   getItems: data.val()
-      // })
-      this.itemsRef.orderByKey().on('child_added', function(snapshot) {
-        console.log(snapshot.key)
-      })
-      console.log('----------------------')
-
-      this.itemsRef.orderByChild('cv').on('child_added', function(snapshot) {
-        console.log(snapshot.val().additionalInformation)
-      })
-      console.log('----------------------')
-
-      // starCountRef = db.ref('reviews/' + key1)
-      db.ref('reviews/' + key1).on('value', function(snapshot) {
-        console.log(snapshot.val().position)
-      })
-      console.log('----------------------')
-      // console.log(getItems.position)
-      // console.log(this.props.data.initialState)
-      // console.log(this.props.text1.text1)
-
-      db.ref('users').once('value').then(snapshot =>
-        this.setState({ users: snapshot.val() })
-      )
-      console.log(this.users)
-      // db.ref('users').on('value', function(snapshot) {
-      //   this.setState({ users: snapshot.val() })
-      // })
+      this.setState({ users: result })
     })
   }
+  componentWillMount() {
+  }
   renderReviews = (company, reviews) => {
+    console.log(reviews)
     const results = [...reviews]
     console.log(results)
     if (this.state.selectedView === 'Popular') {
@@ -107,9 +60,9 @@ class Reviews extends Component {
             <Card.Header>{project.position}</Card.Header>
           </Card.Content>
           {/* <Card.Content extra>{project.company}</Card.Content> */}
-          <Card.Description extra>{project.type}</Card.Description>
-          <Card.Content extra>{project.author}</Card.Content>
-          <Card.Content extra>{project.release_date}</Card.Content>
+          <Card.Description extra>{project.company}</Card.Description>
+          <Card.Content extra>{project.linkedinLink}</Card.Content>
+          <Card.Content extra>{project.releaseDate}</Card.Content>
           <Card.Content extra><Icon name='eye' />{project.views} views</Card.Content>
         </Card>
       )
@@ -163,7 +116,7 @@ class Reviews extends Component {
               {/* <Read text1={{ text1: 'Welcome to React' }}/> */}
               {/* <Read text1={this.state.text1}/> */}
               <Card.Group textAlign="center" itemsPerRow="5" stackable>
-                {this.renderReviews(selectedView, reviews)}
+                {this.renderReviews(selectedView, this.state.users)}
               </Card.Group>
             </Link>
           </Container>
