@@ -144,7 +144,8 @@ const INITIAL_STATE = {
   submittedOnsiteInterview: '',
   submittedAdditionalInformation: '',
   modalOpen: false,
-  publishReview: false
+  publishReview: false,
+  views: 0
 }
 
 
@@ -346,11 +347,12 @@ class Write extends Component {
     const { linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation } = this.state
     const tempDate = new Date()
     const releaseDate = tempDate.getDate() + '/' + (tempDate.getMonth() + 1) + '/' + tempDate.getFullYear()
+    const views = 0
     this.itemsRef.push({
-      linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true, releaseDate
+      linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true, releaseDate, views
     })
     this.itemsRef2.push({
-      linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true, releaseDate
+      linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true, releaseDate, views
     })
     // this.setState({ submitLinkedinLink: linkedinLink, submittedCompany: company, submittedPosition: position, submittedExperience: experience, submittedLeetcode: leetcode, submittedOffers: offers, submittedCv: cv, submittedPitch: pitch, submittedInterviewPreparation: interviewPreparation, submittedTechnicalQuestions: technicalQuestions, submittedNonTechnicalQuestions: nonTechnicalQuestions, submittedPhoneInterview: phoneInterview, submittedOnsiteInterview: onsiteInterview, submittedAdditionalInformation: additionalInformation })
     this.setState({

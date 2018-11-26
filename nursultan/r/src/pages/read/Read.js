@@ -18,6 +18,7 @@ import { db } from './../../firebase/firebase'
 
 const propTypes = {
   // data: PropTypes.object.isRequired,
+  location: PropTypes.any
   // text1: PropTypes.string
 }
 // const readReview = this.countProjects(config.read_review)
@@ -32,80 +33,25 @@ class Read extends Component {
     this.state = {
       rating: 0,
       maxRating: 5,
-      users: null
+      userData: this.props.location.state.userData
       // text1: ''
     }
   }
   // let results = [...projects]
-  componentWillMount() {
-    this.itemsRef.on('value', data => {
-      const allData = data.val()
-      console.log(allData)
-      // const key1 = Object.keys(data.val())[0]
-      // console.log('----------------------')
-      // console.log(key1)
-      console.log('----------------------')
-      // const key2 = Object.keys(data.val()).limitToLast(1)
-      // itemsRef = db.ref('items')
-      // console.log(itemsRef.orderByKey().limitToLast(1))
-      // getLastFromList(this.itemsRef, function(val) {
-      // console.log(val)
-      // })
-      // this.itemsRef.limit(1).once('child_added', function(snapshot) {
-      //   console.log(snapshot.val())
-      // })
-      this.itemsRef.orderByKey().limitToLast(1).on('child_added', function(snapshot) {
-        console.log('poslerd: ' + snapshot.key)
-      })
-      console.log('----------------------')
-      // console.log(allData.key.prevChildKey)
-      // console.log(data.child('cv'))
-      // this.setState({usercount: data.val()});
-      // this.setState({
-      //   getItems: data.val()
-      // })
-      this.itemsRef.orderByKey().on('child_added', function(snapshot) {
-        console.log(snapshot.key)
-      })
-      console.log('----------------------')
-
-      this.itemsRef.orderByChild('cv').on('child_added', function(snapshot) {
-        console.log(snapshot.val().additionalInformation)
-      })
-      console.log('----------------------')
-
-      // starCountRef = db.ref('  items/' + key1)
-      // db.ref('items/' + key1).on('value', function(snapshot) {
-      // console.log(snapshot.val().position)
-      // })
-      console.log('----------------------')
-      // console.log(getItems.position)
-      // console.log(this.props.data.initialState)
-      // console.log(this.props.text1.text1)
-
-      db.ref('users').once('value').then(snapshot =>
-        this.setState({ users: snapshot.val() })
-      )
-      console.log(this.users)
-      // db.ref('users').on('value', function(snapshot) {
-      //   this.setState({ users: snapshot.val() })
-      // })
-    })
-  }
   onRate = (e, { rating, maxRating }) => this.setState({ rating, maxRating })
   render() {
+    const project = this.state.userData
+    console.log(project)
     return (
       <Segment basic>
         <Container>
           <h3 id="category-title">Background Information</h3>
-          {/*  */}
           <List divided horizontal size='large'>
-            <List.Item><strong>James Bond</strong></List.Item>
-            <List.Item>21/10/2018</List.Item>
+            <List.Item><strong>{project.linkedinLink}</strong></List.Item>
+            <List.Item>{project.releaseData}</List.Item>
             <List.Item>17 views</List.Item>
             <List.Item>
               <Rating icon="star" size="large" maxRating={5} onRate={this.onRate} />
-              {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
             </List.Item>
           </List>
           <br /><br />
@@ -116,8 +62,7 @@ class Read extends Component {
                 <Card.Header>Company</Card.Header>
                 <Card.Meta>name</Card.Meta>
                 <Card.Description>
-                  Google
-                  {/* {project.name} */}
+                  {project.name}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -127,7 +72,7 @@ class Read extends Component {
                 <Card.Header>Position</Card.Header>
                 <Card.Meta>internship type</Card.Meta>
                 <Card.Description>
-                  Software Engineer Intern
+                  {project.position}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -137,7 +82,7 @@ class Read extends Component {
                 <Card.Header>Experience</Card.Header>
                 <Card.Meta># of prior years</Card.Meta>
                 <Card.Description>
-                  5 years
+                  {project.experience} years
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -147,7 +92,7 @@ class Read extends Component {
                 <Card.Header>University</Card.Header>
                 <Card.Meta>attended during internship</Card.Meta>
                 <Card.Description>
-                  Carnegie Mellon University
+                  {project.value}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -157,7 +102,7 @@ class Read extends Component {
                 <Card.Header>Leetcode</Card.Header>
                 <Card.Meta>how many problems solved</Card.Meta>
                 <Card.Description>
-                  150-200
+                  {project.leetcode} questions
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -167,7 +112,7 @@ class Read extends Component {
                 <Card.Header>Offers</Card.Header>
                 <Card.Meta>total number</Card.Meta>
                 <Card.Description>
-                  1
+                  {project.offers}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -177,7 +122,7 @@ class Read extends Component {
                 <Card.Header>Applications (5)</Card.Header>
                 <Card.Meta>names of companies</Card.Meta>
                 <Card.Description>
-                  <Label color='blue' >Google</Label><Label color='blue' >Apple</Label><Label color='blue' >CodeObjects</Label><Label color='blue' >SAP</Label>
+                  {project.applications}
                 </Card.Description>
               </Card.Content>
             </Card>

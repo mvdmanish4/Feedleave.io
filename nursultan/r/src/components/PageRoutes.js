@@ -16,7 +16,8 @@ import Profile from '../pages/profile/Profile'
 
 const propTypes = {
   path: PropTypes.string,
-  activePage: PropTypes.object.isRequired
+  activePage: PropTypes.object.isRequired,
+  location: PropTypes.any
 }
 
 class PageRoutes extends React.Component {
@@ -49,9 +50,7 @@ class PageRoutes extends React.Component {
         < Route path="/forget">
           <Forget pageData={activePage} />
         </Route>
-        < Route path="/read">
-          <Read pageData={activePage} />
-        </Route>
+        < Route path="/read" location={location} component={Read} />
         < Route path="/write">
           <Write pageData={activePage} />
         </Route>

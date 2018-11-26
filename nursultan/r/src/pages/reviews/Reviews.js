@@ -24,20 +24,17 @@ class Reviews extends Component {
   constructor(props) {
     super(props)
     this.state = { selectedView: 'Company', listingData: [], users: []}
+  }
+  componentWillMount() {
     db.ref('reviews/').on('value', snapshot => {
-      console.log(snapshot.val())
       const result = Object.keys(snapshot.val()).map(function(key) {
         return snapshot.val()[key]
       })
       this.setState({ users: result })
     })
   }
-  componentWillMount() {
-  }
   renderReviews = (company, reviews) => {
-    console.log(reviews)
     const results = [...reviews]
-    console.log(results)
     if (this.state.selectedView === 'Popular') {
       results.sort(function(a, b) {
         if (Number(a.views) > Number(b.views)) {
@@ -45,15 +42,18 @@ class Reviews extends Component {
         }
         return 1
       })
-    }
-    if (this.state.selectedView === 'New') {
+    } else if (this.state.selectedView === 'New') {
       results.sort(function(a, b) {
         return new Date(b.release_date) - new Date(a.release_date)
+      })
+    } else {
+      results.sort(function(a, b) {
+        return a.company.localeCompare(b.company)
       })
     }
     return results.map(project => {
       return (
-        <Card color="olive">
+        <Card color="olive" as={Link} to={{ pathname: '/read', state: { userData: project } }}>
           {/* key={project.id} */}
           {/* <Image src={project.thumbnail} /> */}
           <Card.Content>
@@ -72,10 +72,6 @@ class Reviews extends Component {
   render() {
     const { selectedView } = this.state
     const { reviews } = config
-    // db.ref('reviews').on('value', data => {
-    //   reviews = data.val()
-    // })
-    console.log(reviews)
     const browserSize = {
       width: window.innerWidth || document.body.clientWidth,
       height: window.innerHeight || document.body.clientHeight
@@ -111,14 +107,12 @@ class Reviews extends Component {
             </Button.Group>
             {/* <Divider /> */}
             <br /><br />
-            <Link to="/read">
-              {/* {this.props.keyName('333')} */}
-              {/* <Read text1={{ text1: 'Welcome to React' }}/> */}
-              {/* <Read text1={this.state.text1}/> */}
-              <Card.Group textAlign="center" itemsPerRow="5" stackable>
-                {this.renderReviews(selectedView, this.state.users)}
-              </Card.Group>
-            </Link>
+            {/* {this.props.keyName('333')} */}
+            {/* <Read text1={{ text1: 'Welcome to React' }}/> */}
+            {/* <Read text1={this.state.text1}/> */}
+            <Card.Group textAlign="center" itemsPerRow="5" stackable>
+              {this.renderReviews(selectedView, this.state.users)}
+            </Card.Group>
           </Container>
         </Segment>
       </div>
