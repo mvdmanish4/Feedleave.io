@@ -27,8 +27,8 @@ const propTypes = {
 
 const options = [
   { key: 'u0', text: 'Carnegie Mellon University SV', value: 'Carnegie Mellon University SV' },
-  { key: 'u1', text: 'Carnegie Mellon University Pittsburgh', value: 'Carnegie Mellon University Pittsburgh' },
-  { key: 'u2', text: 'Stanford University', value: 'Stanford University' }
+  { key: 'u1', text: 'Carnegie Mellon University Pittsburgh', value: 'Carnegie Mellon University Pittsburgh' }
+  // { key: 'u2', text: 'Stanford University', value: 'Stanford University' }
   // { key: 'u3', text: 'University of California, Berkeley', value: 'berkeley' },
   // { key: 'u4', text: 'San José State University', value: 'sanjose' },
   // { key: 'u5', text: 'Berkeley City College', value: 'bcc' },

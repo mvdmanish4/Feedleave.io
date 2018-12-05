@@ -53,13 +53,14 @@ class Read extends Component {
     const project = this.state.userData
     db.ref('reviews/' + project.id).update({views: project.views + 1})
     console.log(project)
+    console.log('bdfkdkf')
 
     return (
       <Segment basic>
         <Container>
           <h3 id="category-title">Background Information</h3>
           <List divided horizontal size='large'>
-            <List.Item><strong>{project.linkedinLink}</strong></List.Item>
+            <strong>{project.linkedinLink}</strong>
             <List.Item>{project.releaseData}</List.Item>
             <List.Item>{project.views} views</List.Item>
             <List.Item>
@@ -131,7 +132,7 @@ class Read extends Component {
             <Card fluid>
               <Card.Content>
                 <Image floated='right' size='tiny' src='img/read/applications.png' />
-                <Card.Header>Applications (5)</Card.Header>
+                <Card.Header>Applications</Card.Header>
                 <Card.Meta>names of companies</Card.Meta>
                 <Card.Description>
                   {project.applications}
@@ -148,8 +149,7 @@ class Read extends Component {
                 <Card.Header>CV</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>
-                  <p>- Summary, education (projects & roles), skills (as many as possible)</p>
-                  <p>- Experience (projects, contributions & roles), honors, activities</p>
+                  {project.cv}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -159,8 +159,7 @@ class Read extends Component {
                 <Card.Header>Pitch</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>
-                  <p>- Practice with Jennifer</p>
-                  <p>- Write down a pitch</p>
+                  {project.pitch}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -170,9 +169,7 @@ class Read extends Component {
                 <Card.Header>Interview Preparation</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>
-                  <p>- Prepare for behavior questions</p>
-                  <p>- Search common questions online, write down your own answers, review them before any interview</p>
-                  <p>- Prepare 1-minute brief description for all the projects or activities on your resume (content, contribution)</p>
+                  {project.interviewPreparation}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -182,9 +179,17 @@ class Read extends Component {
                 <Card.Header>Technical Questions</Card.Header>
                 <Card.Meta>how to impove</Card.Meta>
                 <Card.Description>
-                  <p>- practice algorithms, system design, database</p>
-                  <p>- practice coding and explaining at the same time on the board</p>
-                  <p>- write code in the google document</p>
+                  {project.technicalQuestions}
+                </Card.Description>
+              </Card.Content>
+            </Card>
+            <Card fluid>
+              <Card.Content>
+                <Image floated='right' size='tiny' src='img/read/onsite.png' />
+                <Card.Header>Phone interview</Card.Header>
+                <Card.Meta>how to improve</Card.Meta>
+                <Card.Description>
+                  {project.phoneInterview}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -194,9 +199,17 @@ class Read extends Component {
                 <Card.Header>On-site interview</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>
-                  <p>- Small companies might require you to do the on-site interview instead of the phone interview</p>
-                  <p>- Most of the on-site interview including system design problems</p>
-                  <p>- database, distributed system, cloud deployment</p>
+                  {project.onsiteInterview}
+                </Card.Description>
+              </Card.Content>
+            </Card>
+            <Card fluid>
+              <Card.Content>
+                <Image floated='right' size='tiny' src='img/read/onsite.png' />
+                <Card.Header>Additional Information</Card.Header>
+                <Card.Meta>how to improve</Card.Meta>
+                <Card.Description>
+                  {project.additionalInformation}
                 </Card.Description>
               </Card.Content>
             </Card>

@@ -45,15 +45,17 @@ class Reviews extends Component {
         }
         return 1
       })
-    } else if (this.state.selectedView === 'New') {
-      results.sort(function(a, b) {
-        return new Date(b.release_date) - new Date(a.release_date)
-      })
     } else {
       results.sort(function(a, b) {
         return a.company.localeCompare(b.company)
       })
     }
+    // else if (this.state.selectedView === 'New') {
+    //   results.sort(function(a, b) {
+    //     return new Date(b.release_date) - new Date(a.release_date)
+    //   })
+    // }
+
     return results.map(project => {
       return (
         <Card color="olive" as={Link} to={{ pathname: '/read', state: { userData: project } }}>
@@ -100,20 +102,20 @@ class Reviews extends Component {
               >
                 Popular
               </Button>
-              <Button
+              {/* <Button
                 key={'New'}
                 onClick={this.handleReviewsSelect}
                 color={this.state.selectedView === 'New' ? 'pink' : 'linkedin'}
               >
                 New
-              </Button>
+              </Button> */}
             </Button.Group>
             {/* <Divider /> */}
             <br /><br />
             {/* {this.props.keyName('333')} */}
             {/* <Read text1={{ text1: 'Welcome to React' }}/> */}
             {/* <Read text1={this.state.text1}/> */}
-            <Card.Group textAlign="center" itemsPerRow="5" stackable>
+            <Card.Group textAlign="left" itemsPerRow="5" stackable>
               {this.renderReviews(selectedView, this.state.users)}
             </Card.Group>
           </Container>

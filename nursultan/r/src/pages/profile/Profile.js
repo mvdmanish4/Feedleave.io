@@ -60,7 +60,7 @@ class Profile extends Component {
           <br />
           {/* <Message success header='Password changed' />
           <Message error header='Error' content='Please, fill out all required fields.' /> */}
-          <h3 id="category-title">My Reviews (2)</h3>
+          {/* <h3 id="category-title">My Reviews (2)</h3>
           <Grid columns={8} stackable celled verticalAlign="middle" textAlign="center">
             <Grid.Row>
               <Grid.Column width={2}>
@@ -116,7 +116,7 @@ class Profile extends Component {
                 <Button circular icon='trash' />
               </Grid.Column>
             </Grid.Row>
-          </Grid>
+          </Grid> */}
         </Container>
       </Segment>
     )
