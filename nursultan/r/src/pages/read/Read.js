@@ -149,7 +149,9 @@ class Read extends Component {
                 <Card.Header>CV</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>
-                  {project.cv}
+                  {project.cv.split('\n').map((i, key) => {
+                    return <div key={key}>{i}</div>
+                  })}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -159,7 +161,9 @@ class Read extends Component {
                 <Card.Header>Pitch</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>
-                  {project.pitch}
+                  {project.pitch.split('\n').map((i, key) => {
+                    return <div key={key}>{i}</div>
+                  })}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -169,7 +173,9 @@ class Read extends Component {
                 <Card.Header>Interview Preparation</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>
-                  {project.interviewPreparation}
+                  {project.interviewPreparation.split('\n').map((i, key) => {
+                    return <div key={key}>{i}</div>
+                  })}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -215,7 +221,9 @@ class Read extends Component {
                 <Card.Header>Additional Information</Card.Header>
                 <Card.Meta>how to improve</Card.Meta>
                 <Card.Description>
-                  {project.additionalInformation}
+                  {project.additionalInformation.split('\n').map((i, key) => {
+                    return <div key={key}>{i}</div>
+                  })}
                 </Card.Description>
               </Card.Content>
             </Card>
