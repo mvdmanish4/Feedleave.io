@@ -180,6 +180,10 @@ class Write extends Component {
   render() {
     const {
       linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, submitLinkedinLink, submittedCompany, submittedPosition, submittedExperience, submittedLeetcode, submittedOffers, submittedCv, submittedPitch, submittedInterviewPreparation, submittedTechnicalQuestions, submittedNonTechnicalQuestions, submittedPhoneInterview, submittedOnsiteInterview, submittedAdditionalInformation } = this.state
+
+    // const isInvalid =
+    // linkedinLink === '' ||
+    // company === ''
     return (
       <Segment basic>
         <Container>
@@ -268,7 +272,7 @@ class Write extends Component {
           <Grid>
             <Grid.Column>
               <Button type='submit' color="red" onClick={this.handleClear}>Clear</Button>
-              <Button type='submit' color="blue" onClick={this.handleSave}>Save</Button>
+              {/* <Button type='submit' color="blue" onClick={this.handleSave}>Save</Button> */}
               <Button type='submit' color="green" onClick={this.handleSubmit}>Submit</Button>
             </Grid.Column>
           </Grid>
@@ -348,17 +352,21 @@ class Write extends Component {
     const tempDate = new Date()
     const releaseDate =  (tempDate.getMonth() + 1) + '/' + tempDate.getDate() + '/' + tempDate.getFullYear()
     const views = 0
-    this.itemsRef.push({
-      linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true, releaseDate, views
-    })
-    this.itemsRef2.push({
-      linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true, releaseDate, views
-    })
-    // this.setState({ submitLinkedinLink: linkedinLink, submittedCompany: company, submittedPosition: position, submittedExperience: experience, submittedLeetcode: leetcode, submittedOffers: offers, submittedCv: cv, submittedPitch: pitch, submittedInterviewPreparation: interviewPreparation, submittedTechnicalQuestions: technicalQuestions, submittedNonTechnicalQuestions: nonTechnicalQuestions, submittedPhoneInterview: phoneInterview, submittedOnsiteInterview: onsiteInterview, submittedAdditionalInformation: additionalInformation })
-    this.setState({
-      ...INITIAL_STATE
-    })
-    this.setState({ modalOpen: true })
+    if (linkedinLink === undefined || company === undefined || position === undefined || experience === undefined || value === undefined || offers === undefined || applications === undefined || leetcode === undefined || cv === undefined || pitch === undefined || interviewPreparation === undefined || technicalQuestions === undefined || nonTechnicalQuestions === undefined || phoneInterview === undefined || onsiteInterview === undefined || additionalInformation === undefined) {
+      console.log('ooo')
+    } else {
+      this.itemsRef.push({
+        linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true, releaseDate, views
+      })
+      this.itemsRef2.push({
+        linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true, releaseDate, views
+      })
+      // this.setState({ submitLinkedinLink: linkedinLink, submittedCompany: company, submittedPosition: position, submittedExperience: experience, submittedLeetcode: leetcode, submittedOffers: offers, submittedCv: cv, submittedPitch: pitch, submittedInterviewPreparation: interviewPreparation, submittedTechnicalQuestions: technicalQuestions, submittedNonTechnicalQuestions: nonTechnicalQuestions, submittedPhoneInterview: phoneInterview, submittedOnsiteInterview: onsiteInterview, submittedAdditionalInformation: additionalInformation })
+      this.setState({
+        ...INITIAL_STATE
+      })
+      this.setState({ modalOpen: true })
+    }
   }
   handleClose = () => this.setState({ modalOpen: false })
 }

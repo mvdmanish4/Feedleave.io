@@ -103,10 +103,10 @@ class Signup extends Component {
                     {error && <p>{error.message}</p>}
                     {/* <Form.Button fluid disabled={isInvalid} color="black" type="submit">Sign Up</Form.Button> */}
                     <Button type='submit' fluid disabled={isInvalid} color="black" onClick={this.onSubmit}>Sign Up</Button>
-                    <Divider horizontal>or</Divider>
+                    {/* <Divider horizontal>or</Divider>
                     <Button fluid color='linkedin'>
                       <Icon name='linkedin' /> LinkedIn
-                    </Button>
+                    </Button> */}
                   </Form>
                   <br />
                   <label>By continuing, you agree to Feedleave's <Link to="/terms">Terms of Service</Link>, <Link to="/privacy">Privacy Policy</Link></label>
