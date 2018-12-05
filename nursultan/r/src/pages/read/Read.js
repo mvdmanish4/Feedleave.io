@@ -37,6 +37,12 @@ class Read extends Component {
       // text1: ''
     }
   }
+  componentWillMount() {
+    if (this.state.userData.rating) {
+      this.setState({rating: this.state.userData.rating})
+      this.state.rating = this.state.userData.rating
+    }
+  }
   // let results = [...projects]
   onRate = (e, { rating, maxRating }) => {
     this.setState({ rating, maxRating })
@@ -45,11 +51,8 @@ class Read extends Component {
   }
   render() {
     const project = this.state.userData
-    db.ref('reviews/' + this.state.userData.id).update({views: this.state.userData.views + 1})
+    db.ref('reviews/' + project.id).update({views: project.views + 1})
     console.log(project)
-    if (this.state.userData.rating) {
-      this.state.rating = this.state.userData.rating
-    }
 
     return (
       <Segment basic>
