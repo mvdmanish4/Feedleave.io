@@ -38,10 +38,19 @@ class Read extends Component {
     }
   }
   // let results = [...projects]
-  onRate = (e, { rating, maxRating }) => this.setState({ rating, maxRating })
+  onRate = (e, { rating, maxRating }) => {
+    this.setState({ rating, maxRating })
+    db.ref('reviews/' + this.state.userData.id).update({rating: rating})
+    this.state.userData.rating = rating
+  }
   render() {
     const project = this.state.userData
+    db.ref('reviews/' + this.state.userData.id).update({views: this.state.userData.views + 1})
     console.log(project)
+    if (this.state.userData.rating) {
+      this.state.rating = this.state.userData.rating
+    }
+
     return (
       <Segment basic>
         <Container>
@@ -49,9 +58,9 @@ class Read extends Component {
           <List divided horizontal size='large'>
             <List.Item><strong>{project.linkedinLink}</strong></List.Item>
             <List.Item>{project.releaseData}</List.Item>
-            <List.Item>17 views</List.Item>
+            <List.Item>{project.views} views</List.Item>
             <List.Item>
-              <Rating icon="star" size="large" maxRating={5} onRate={this.onRate} />
+              <Rating icon="star" size="large" maxRating={5} onRate={this.onRate} rating={this.state.rating}/>
             </List.Item>
           </List>
           <br /><br />
@@ -62,7 +71,7 @@ class Read extends Component {
                 <Card.Header>Company</Card.Header>
                 <Card.Meta>name</Card.Meta>
                 <Card.Description>
-                  {project.name}
+                  {project.company}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -193,7 +202,6 @@ class Read extends Component {
       </Segment>
     )
   }
-  itemsRef = db.ref('reviews')
   // this.itemsRef.on('value', function(snapshot) {
   // console.log(snapshot.val())
   // _this.setState({

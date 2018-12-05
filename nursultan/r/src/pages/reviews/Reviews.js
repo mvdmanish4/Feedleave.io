@@ -28,12 +28,15 @@ class Reviews extends Component {
   componentWillMount() {
     db.ref('reviews/').on('value', snapshot => {
       const result = Object.keys(snapshot.val()).map(function(key) {
-        return snapshot.val()[key]
+        const entry = snapshot.val()[key]
+        entry.id = key
+        return entry
       })
       this.setState({ users: result })
     })
   }
   renderReviews = (company, reviews) => {
+    console.log(reviews)
     const results = [...reviews]
     if (this.state.selectedView === 'Popular') {
       results.sort(function(a, b) {

@@ -346,7 +346,7 @@ class Write extends Component {
   handleSubmit = () => {
     const { linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation } = this.state
     const tempDate = new Date()
-    const releaseDate = tempDate.getDate() + '/' + (tempDate.getMonth() + 1) + '/' + tempDate.getFullYear()
+    const releaseDate =  (tempDate.getMonth() + 1) + '/' + tempDate.getDate() + '/' + tempDate.getFullYear()
     const views = 0
     this.itemsRef.push({
       linkedinLink, company, position, experience, value, leetcode, offers, applications, cv, pitch, interviewPreparation, technicalQuestions, nonTechnicalQuestions, phoneInterview, onsiteInterview, additionalInformation, publishReview: true, releaseDate, views
